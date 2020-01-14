@@ -28,6 +28,7 @@ import { MessagesModule } from './components/messages/messages.module';
 import { MessagesRoutingModule } from './components/messages/messages-routing.module';
 import { HostlistSidebarComponent } from './hostlist-sidebar/hostlist-sidebar.component';
 import { HotlistPopupComponent } from './hotlist-popup/hotlist-popup.component';
+import { PoliticsComponent } from './components/politics/politics.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { HotlistPopupComponent } from './hotlist-popup/hotlist-popup.component';
     ProfileComponent,
     FollowingComponent,
     HostlistSidebarComponent,
-    HotlistPopupComponent
+    HotlistPopupComponent,
+    PoliticsComponent
   ],
   imports: [
     BrowserModule,

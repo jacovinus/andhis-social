@@ -8,9 +8,6 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { UploadService } from 'src/app/services/upload.service';
 import { GLOBAL } from 'src/app/services/global';
 
-
-
-
 @Component({
   selector: 'app-publication',
   templateUrl: './publication.component.html',
@@ -39,8 +36,6 @@ public url;
   ) { 
     this.token = this._userService.getToken();
     this.identity = this._userService.getIdentity();
-   
-    
     this.stats = this._userService.getStats();
     this.url = GLOBAL.url;
     this.publication = new Publication('',this.identity._id,'','','','','','','');

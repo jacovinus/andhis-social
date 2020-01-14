@@ -32,6 +32,13 @@ public token: string;
       .set('Authorization',token);
       return this._http.post(this.url+'hotlist',params,{headers});
     }
+// @TODO -> terminar de enlazar hotlistitem con categoria
+    addToHotlist(token, hotlistitem):Observable<any> {
+      let params = JSON.stringify(hotlistitem);
+      let headers = new HttpHeaders().set('Content-Type','application/json')
+      .set('Authorization',token);
+      return this._http.post(this.url+'hotlistitem',params,{headers});
+    }
 
     getHotlist(token,id):Observable<any>{
       let headers = new HttpHeaders().set('Content-Type','application/json')
@@ -48,7 +55,7 @@ public token: string;
     getHotlists(token):Observable<any>{
       let headers = new HttpHeaders().set('Content-Type','application/json')
       .set('Authorization',token);
-      return this._http.get(this.url+'hotlists/,{headers});
+      return this._http.get(this.url+'hotlists',{headers});
     }
 }
 

@@ -19,6 +19,7 @@ const prueba = (req, res) => {
  * request publication id - user id - hotlist id 
  * @param {*} res 
  * response publication text - publication user name - hotlist name
+ * agregar select con hotlists & categorias
  */
 const saveHotlistItem = (req,res) => {
     let UserId = req.user.sub;

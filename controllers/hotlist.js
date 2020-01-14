@@ -75,9 +75,11 @@ const getHotlist = (req, res) => {
         return res.status(200).send({hotlist});
     });
 }
-// listar hotlists 
-const getHotlists = (req, res) => {
+//listar hotlists
 
+const getHotlists = (req, res) => {
+    let page = 1;
+    let itemsPerPage = 20;
     Follow.find({user :req.user.sub}).populate('followed').exec((err,follows) => {
         if(err) return res.status(500).send({message: 'Error al devolver el seguimiento'});
         let follows_clean = [];
@@ -85,16 +87,20 @@ const getHotlists = (req, res) => {
             follows_clean.push(follow.followed);
         });
         follows_clean.push(req.user.sub);
-        Hotlist.find({user: {"$in":follows_clean}}).sort('-created_at').populate('user'),(err, hotlists, total)=>{
+        Hotlist.find({user: {"$in":follows_clean}}).sort('-created_at').populate('user').paginate(page, itemsPerPage,(err, hotlists, total)=>{
             if(err) return res.status(500).send({message: 'Error al obtener los hotlist'});
             if(!hotlists) return res.status(404).send({message: 'no se han encontrado hotlists'});
             if(hotlists) return res.status(200).send({
                 total_items : total,
                 hotlists: hotlists,
+                items_per_page : itemsPerPage,
+                page: page,
+                pages: Math.ceil(total/itemsPerPage)
             });
-        };
+        });
     });
 }
+
 
 // Export methods 
 module.exports = {

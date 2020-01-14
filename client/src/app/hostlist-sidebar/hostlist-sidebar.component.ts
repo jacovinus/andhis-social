@@ -13,7 +13,8 @@ import { Publication } from '../models/publication';
 export class HostlistSidebarComponent implements OnInit {
 public identity: any;
 public token : string;
-public hotslists: Hotlist[];
+public status: string;
+public hotlists: Hotlist[];
 public publications: Publication[];
 
   constructor(
@@ -24,11 +25,25 @@ public publications: Publication[];
     this.identity  = _userService.getIdentity();
     this.token = _userService.getToken();
   }
-updateHotlists(token) {
-  this._hotlistService.getHotlists(token)
-}
+  getHotlists(adding = false){
+    this._hotlistService.getHotlists(this.token).subscribe(
+      response => {
+            this.hotlists = response.hotlists;
+            console.log(this.hotlists);
+            this.status = "success"
+      },
+      error => {
+        let errorMessage = <any>error;
+        console.log(errorMessage);
+        if(errorMessage != null) {
+          this.status = 'error';
+        }
+      }
+    )
+  }
   ngOnInit() {
-    this.updateHotlists(this.token);
+    this.getHotlists();
+    this.hotlists;
   }
 
 }

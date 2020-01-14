@@ -12,6 +12,7 @@ import { Router, ActivatedRoute, Route} from '@angular/router';
   styleUrls: ['./hotlist.component.css'],
   providers: [UserService, HotlistService]
 })
+
 export class HotlistComponent implements OnInit, DoCheck {
 public identity;
 public token;
@@ -50,8 +51,6 @@ getHotlists(adding = false){
     }
   )
 }
-
-
 onSubmit(form){
   this._hotlistService.addHotList(this._userService.getToken(),this.hotlist)
   .subscribe(
@@ -76,25 +75,19 @@ onSubmit(form){
   )
 }
 //@TODO delete hotlist
-deleteHotlist(){
- this._hotlistService.deleteHotlist(this._userService.getToken(),this.hotlist._id)
+deleteHotlist(id){
+ this._hotlistService.deleteHotlist(this.token,id)
   .subscribe(
     response => {
-      let search = this.hotlists.indexOf(this.hotlist);
-      if(search != -1){
-        this.hotlists.splice(search, 1); 
-    }
+ response.message == "success";
+    this._router.navigate(['/'])
 },
 error => {
-let errorMessage = <any>error;
-console.log(errorMessage);
-if(errorMessage != null){
-  this.status = 'error';
-    }
-  }
+console.log(Error);
+}
   )
-  
 } 
+
 
 ngDoCheck(){}
 

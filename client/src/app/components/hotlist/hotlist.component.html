@@ -29,6 +29,7 @@
             <div *ngFor="let hotlist of hotlists" class="card mb-3">
               <div class="card-header">
                   <p class="lead pull-left">
+                    hotlist
                       {{hotlist.listname}}
                     </p>
                     <p class="pull-right">
@@ -39,7 +40,7 @@
                   <p class="badge badge-primary">
                       {{(hotlist.created_at | amFromUnix) | amLocale:'es' | amTimeAgo }}
                   </p>
-                   <button class="btn btn-sm btn-warning pull-right" (click)="deleteHotlist()">Eliminar Hotlist</button>
+                   <button class="btn btn-sm btn-warning pull-right" (click)="deleteHotlist(hotlist._id)">Eliminar Hotlist</button>
               </div>
            
          
