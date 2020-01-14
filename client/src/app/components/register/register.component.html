@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="col-10 mt-3">
+    <h1 class="p">{{title}}</h1>
+    <hr>
+    <div class="alert alert-warning" *ngIf="status=='error'">No se ha podido registrar el nuevo usuario</div>
+    <div class="alert alert-success" *ngIf="status=='success'">Usuario registrado correctamente, <a [routerLink]="['/login']" routerLinkActive="router-link-active">Identifícate aquí</a> </div>
+  <form #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm)" class="col-10">
+  <div class="form-group">
+  <label for="name">Nombre</label>
+  <input type="text" name="name" #name="ngModel" [(ngModel)]="user.name" class="form-control" required>
+  <div *ngIf="!name.valid && name.touched" class="alert alert-warning" role="alert">
+    Nombre requerido
+  </div>
+  </div>
+  <div class="form-group">
+  <label for="surname">Apellido</label>
+  <input type="text" name="surname" #surname="ngModel" [(ngModel)]="user.surname" class="form-control" required>
+  <div *ngIf="!surname.valid && surname.touched" class="alert alert-warning" role="alert">
+    Apellido requerido
+  </div>
+  </div>
+  <div class="form-group"> 
+  <label for="nick">Nick</label>
+  <input type="text" name="nick" #nick="ngModel" [(ngModel)]="user.nick" class="form-control" required>
+  <div *ngIf="!nick.valid && nick.touched" class="alert alert-warning" role="alert">
+    Correo electronico requerido
+  </div>
+  </div>
+  <div class="form-group">
+  <label for="email">Email</label>
+  <input type="email" name="email" #email="ngModel" [(ngModel)]="user.email" class="form-control" required>
+  <div *ngIf="!email.valid && email.touched" class="alert alert-warning" role="alert">
+    Correo electronico requerido
+  </div>
+  </div>
+  <div class="form-group">
+  <label for="tel">Tel</label>
+  <input type="text" name="tel" #tel="ngModel" [(ngModel)]="user.tel" class="form-control">
+  </div>
+  <div class="form-group">
+  <label for="password">Password</label>
+  <input type="password" name="password" #password="ngModel" [(ngModel)]="user.password" class="form-control" required>
+  <div *ngIf="!password.valid && password.touched" class="alert alert-warning" role="alert">
+    La contraseña es obligatoria!
+  </div>
+  </div>
+  <input type="submit" value="{{title}}" class="btn btn-warning"/>
+  </form>
+  </div>
+
+</div>
+

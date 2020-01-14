@@ -1,0 +1,26 @@
+<div class="tab-pane fade show" id="nav-sent" role="tabpanel" aria-labelledby="nav-sent-tab">
+<div class="col-lg-12">
+    
+        <h3 class="mt-4 mb-4">{{title}}</h3>
+    
+  
+    <!-- mensajes recibidos -->
+    <ul class="list-group">
+        <li *ngFor="let message of messages" class="list-group-item align-items-center mt-3">
+            <div class="d-flex justify-content-start align-items-center">
+                <img src="{{url + 'get-image-user/'+message.receiver.image}}" width="50px" alt="..." class="img img-thumbnail mr-2">
+                <small>para: <a  [routerLink]="['/profile/',message.receiver._id]" class="text-primary">  {{message.receiver.name}} {{message.receiver.surname}} ({{message.receiver.nick}})</a></small>
+                <small class="ml-4 text-muted">{{(message.created_at | amFromUnix) | amLocale:'es' | amTimeAgo }}</small> 
+            </div>
+            <hr>
+            <p style="white-space:pre-line" class="ml-4 col-lg-7">{{message.text}}</p>
+        </li>
+    </ul>
+    <nav aria-label="Page navigation example">
+        <ul class="pagination mt-4">
+          <li *ngIf="page >1" class="page-item"><a class="page-link" [routerLink]="['/messages/sent/',prev_page]">Previous</a></li>
+          <li *ngIf="pages != page || !page" class="page-item"><a class="page-link" [routerLink]="['/messages/sent/',next_page]">Next</a></li>
+        </ul>
+      </nav>
+</div>
+</div>

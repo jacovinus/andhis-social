@@ -1,0 +1,15 @@
+
+        <div class="container mt-3">
+            <h1 class="display-4">Hello, <span *ngIf="identity">{{identity.name}}</span><span *ngIf="!identity">Stranger</span></h1>
+            <p>Wellcome to your new social network</p>
+            
+            <p *ngIf="!identity">Please login if you have an account or register.</p>
+         
+                <app-timeline *ngIf="identity"></app-timeline>
+          
+       
+        </div>
+      
+
+
+

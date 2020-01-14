@@ -1,0 +1,11 @@
+/* You can add global styles to this file, and also import other style files */
+.router-link-active {
+    background: #6666FF;
+   
+}
+ .link-active .router-link-active a{
+    color:white;
+}
+.btn .btn-pub {
+    height:50px;
+}

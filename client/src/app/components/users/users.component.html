@@ -1,0 +1,44 @@
+
+  
+  <div class="container-fluid">
+      <div class="row">
+        <div class="col-10">
+        <div class="mt-3">
+          <p class="lead">{{title}}</p>
+      </div>
+    </div>
+          <div class="card border-secondary mb-3 col-lg-5 ml-2 mr-2" *ngFor="let user of users">
+
+                 
+               <div class="card-body">
+                <a *ngIf="user._id != identity._id" [routerLink]="['/profile/'+user._id]"><p class="lead">{{user.name}} {{user.surname}}</p> </a>
+                <img *ngIf="user.image" class="img img-thumbnail pull-left mr-3" src="{{ url + 'get-image-user/' + user.image }}" width="100px" alt="">
+                <a class="tex-secondary" [routerLink]="['/profile/'+user._id]"><i class="fa fa-user-circle"></i> {{user.nick}}</a>
+                <p *ngIf="user.description" class="text-secondary">
+                  {{user.description}}
+                </p>
+                <hr/>
+                <div class="followers">
+                  <span *ngIf="user._id != identity._id" class="pull-right">
+                    <button *ngIf="follows.indexOf(user._id) <= 0" class="btn btn-outline-success pull-right" (click)="followUser(user._id)"><i class="fa fa-binoculars"></i> Seguir</button>
+                    <button  *ngIf="follows.indexOf(user._id) > 0" href="#" class="btn btn-outline-secondary btn-sm" (click)="unFollowUser(user._id)"> <i class="fa fa-ban"></i> Dejar de seguir</button>
+                    </span>
+                    <p *ngIf="follows.indexOf(user._id) > 0" class="badge badge-success"><i class="fa fa-binoculars"></i> Siguiendo </p>
+                </div>
+                
+                 
+            </div>
+        </div>
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+              <li *ngIf="page >1" class="page-item"><a class="page-link" [routerLink]="['/users',prev_page]">Previous</a></li>
+              <li *ngIf="pages != page || !page" class="page-item"><a class="page-link" [routerLink]="['/users',next_page]">Next</a></li>
+            </ul>
+          </nav>
+  </div>
+  </div>
+ 
+   
+  
+  
+  

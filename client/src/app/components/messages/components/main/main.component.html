@@ -1,0 +1,16 @@
+<div class="container mt-4">
+
+ <div class="col-lg-4">
+    <h3>{{title}}</h3>
+</div>
+<nav class="mt-4">
+    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+        <a class="nav-item nav-link active" id="nav-received-tab" data-toggle="tab" [routerLink]="['received']" role="tab" aria-controls="nav-profile" aria-selected="false">Recibidos</a>
+      <a class="nav-item nav-link" id="nav-send-tab" data-toggle="tab" [routerLink]="['send']" role="tab" aria-controls="nav-home" aria-selected="true">Enviar</a>
+      <a class="nav-item nav-link" id="nav-sent-tab" data-toggle="tab" [routerLink]="['sent']" role="tab" aria-controls="nav-contact" aria-selected="false">Enviados</a>
+    </div>
+  </nav>
+  <div class="tab-content" id="nav-tabContent">
+    <router-outlet></router-outlet>
+  </div>
+</div>

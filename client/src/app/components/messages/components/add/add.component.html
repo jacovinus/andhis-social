@@ -1,0 +1,31 @@
+<div class="tab-pane fade show" id="nav-send" role="tabpanel" aria-labelledby="nav-send-tab">
+<div class="col-lg-12">
+    <h3>{{title}}</h3>
+    <!-- Formulario envio -->
+    <div class="alert alert-success" *ngIf="status === 'success'">
+        <small>El mensaje se ha enviado correctamente! </small>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+    </div>
+    <form #formAdd="ngForm" (ngSubmit)="onSubmit(formAdd)" class="form form-group" action="">
+        <p>
+            <label for="para">Para: </label>
+            <!-- Listado de seguidores -->
+            <select name="receiver" *ngIf="follows" #receiver="ngModel" [(ngModel)]="message.receiver" class="form-control" required id="selector">
+                <option *ngFor="let follow of follows" value="{{follow.user._id}}">
+                    {{follow.user.name + ' ' + follow.user.surname + ' (' + follow.user.nick + ')' }}
+                </option>
+            </select>
+        </p>
+        <p>
+            <label for="mensaje">Mensaje:</label>
+            <textarea style="white-space:pre" name="text" #text="ngModel" [(ngModel)]="message.text" class="form-control" required id="text" cols="30" rows="10"></textarea>
+            <span *ngIf="!text.valid && text.touched">
+                El mensaje es obligatorio!
+            </span>
+        </p>
+        <input type="submit" value="{{title}}" class="btn btn-success">
+    </form>
+</div>
+</div>
