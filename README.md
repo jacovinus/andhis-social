@@ -1,3 +1,6 @@
+**Nota  de fase actual de desarrollo: **
+para que funcione deben iniciar con npm start en la carpeta raíz, otro npm start para el cliente, e iniciar el servicio de mongodb para que se cree la base de datos local y guardar la información
+
 #Andhis social news
 
 Red social de noticias desarrollada en Angular, NodeJs y NoSQL databases con información encriptada con Tokens
