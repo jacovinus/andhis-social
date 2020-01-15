@@ -9,7 +9,7 @@ import { TimelineComponent } from "./components/timeline/timeline.component";
 import { HotlistComponent } from "./components/hotlist/hotlist.component";
 import { ProfileComponent } from "./components/profile/profile.component";
 import { FollowingComponent } from "./components/following/following.component";
-import { MessagesRoutingModule } from './components/messages/messages-routing.module';
+import { MessagesRoutingModule } from "./components/messages/messages-routing.module";
 
 const routes: Routes = [
   { path: "", component: HomeComponent },
@@ -23,7 +23,7 @@ const routes: Routes = [
   { path: "hotlist", component: HotlistComponent },
   { path: "hotlists", component: HotlistComponent },
   { path: "profile/:id", component: ProfileComponent },
-  { path: "following/:id/:page", component: FollowingComponent },
+  { path: "following/:id/:page", component: FollowingComponent }
   //{ path: "**", component: HomeComponent }
 ];
 

@@ -15,7 +15,7 @@
   </div>
 
 </div>
-    
+
 <!-- componente de publicaciones de usuario-->
 <div class="card border-0 mb-3" *ngFor="let publication of publications">
 
@@ -44,7 +44,7 @@
     <div class="float-left">
       <img *ngIf="identity.image" src="{{ url + 'get-image-user/'+ publication.user.image}}"
       class="img-thumbnail rounded-circle mb-3 mt-2" width="40px">
-  <a [routerLink]="['/profile/'+identity._id]" class="ml-2">
+  <a [routerLink]="['/profile/'+publication.user._id]" class="ml-2">
     <small>{{publication.user.nick}}</small>
   </a>
   <span class="text-secondary">
@@ -55,8 +55,8 @@
       <button class="btn btn-outline-warning btn-sm card-link" (click)="likePublication(publication._id)">
         <i class="fa fa-heart"></i> !
       </button>
-      <button class="btn btn-outline-info btn-sm card-link"><span class="badge"><i class="fa fa-bolt"></i></span>
-        Hotlist</button>
+      <a class="btn btn-outline-info btn-sm card-link" href="#addHotlist-{{publication._id}}" role="button" data-toggle="modal"><span class="badge"><i class="fa fa-bolt"></i></span>
+        Hotlist</a>
         <a *ngIf="publication.user._id == identity._id" href="#myModal-{{publication._id}}" role="button" data-toggle="modal" class="card-link btn btn-sm btn-outline-danger">
           <span class="badge"> <i class ="fa fa-times"></i></span> Eliminar</a>
     </div>
@@ -64,9 +64,7 @@
  </div>
 </div>
 
-
-
-
+<app-hotlist-popup [publication]="publication._id"></app-hotlist-popup>
 
 <!--Modal HTML-->
 <div id="myModal-{{publication._id}}" class="modal fade">
@@ -91,7 +89,7 @@
 </div>
 </div>
 </div>
-
+<app-hostlist-sidebar></app-hostlist-sidebar>
 
 </div>
 
