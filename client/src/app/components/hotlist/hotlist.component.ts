@@ -88,7 +88,6 @@ console.log(Error);
   )
 } 
 
-
 ngDoCheck(){}
 
 }

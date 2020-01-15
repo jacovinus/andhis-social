@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { UserService } from '../services/user.service';
 import { HotlistService } from '../services/hotlist.service';
-import { identity } from 'rxjs';
 import { Hotlist } from '../models/hotlist';
 import { Publication } from '../models/publication';
 
@@ -16,6 +15,7 @@ public token : string;
 public status: string;
 public hotlists: Hotlist[];
 public publications: Publication[];
+
 
   constructor(
     private _userService: UserService,
@@ -43,7 +43,7 @@ public publications: Publication[];
   }
   ngOnInit() {
     this.getHotlists();
-    this.hotlists;
+    return this.hotlists;
   }
 
 }

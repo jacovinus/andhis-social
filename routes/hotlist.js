@@ -9,7 +9,6 @@ const auth = require('../middlewares/authenticated');
 const HotlistController = require('../controllers/hotlist');
 const HotlistItemController = require('../controllers/hotlistitem');
 
-
 // Routes hotlist
 api.get('/hotlist-prueba',auth.ensureAuth, HotlistController.hotlistTest);
 api.get('/hotlist/:id', auth.ensureAuth,HotlistController.getHotlist);

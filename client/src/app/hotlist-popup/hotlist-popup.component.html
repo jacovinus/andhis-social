@@ -1,3 +1,6 @@
-<div class="modal fade">
-
+<div class="col-lg-5">
+    <select (change)="hotlistSelector($event)">
+        <option *ngFor="let listitem of list" [value]="listitem._id">{{listitem.listname}}</option>
+    </select>
+    <button (click)="addHotlistItem(listItem,publication)">agregar</button>
 </div>

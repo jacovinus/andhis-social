@@ -4,6 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { GLOBAL } from './global';
 import { Hotlist } from '../models/hotlist';
+import { Hotlistitem } from '../models/hotlistitem';
 
 /**
  * Metodos:
@@ -18,8 +19,6 @@ import { Hotlist } from '../models/hotlist';
 export class HotlistService {
 public url: string;
 public token: string;
-
-
 
   constructor(private _http:HttpClient
     ) {
@@ -56,6 +55,12 @@ public token: string;
       let headers = new HttpHeaders().set('Content-Type','application/json')
       .set('Authorization',token);
       return this._http.get(this.url+'hotlists',{headers});
+    }
+    addHotlistItem(token, hotlistitem:Hotlistitem):Observable<any>{
+      let params = JSON.stringify(hotlistitem);
+      let headers = new HttpHeaders().set('Content-Type','application/json')
+      .set('Authorization',token);
+      return this._http.post(this.url+'hotlistitem',params,{headers});
     }
 }
 
