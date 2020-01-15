@@ -24,11 +24,11 @@ import { FollowingComponent } from "./components/following/following.component";
 
 // Messaging Module
 //import { MessagesRoutingModule } from './components/messages/messages-routing.module';
-import { MessagesModule } from './components/messages/messages.module';
-import { MessagesRoutingModule } from './components/messages/messages-routing.module';
-import { HostlistSidebarComponent } from './hostlist-sidebar/hostlist-sidebar.component';
-import { HotlistPopupComponent } from './hotlist-popup/hotlist-popup.component';
-import { PoliticsComponent } from './components/politics/politics.component';
+import { MessagesModule } from "./components/messages/messages.module";
+import { MessagesRoutingModule } from "./components/messages/messages-routing.module";
+import { HostlistSidebarComponent } from "./hostlist-sidebar/hostlist-sidebar.component";
+import { HotlistPopupComponent } from "./hotlist-popup/hotlist-popup.component";
+import { PoliticsComponent } from "./components/politics/politics.component";
 
 @NgModule({
   declarations: [
