@@ -44,7 +44,7 @@
     <div class="float-left">
       <img *ngIf="identity.image" src="{{ url + 'get-image-user/'+ publication.user.image}}"
       class="img-thumbnail rounded-circle mb-3 mt-2" width="40px">
-  <a [routerLink]="['/profile/'+identity._id]" class="ml-2">
+  <a [routerLink]="['/profile/'+publication.user._id]" class="ml-2">
     <small>{{publication.user.nick}}</small>
   </a>
   <span class="text-secondary">
