@@ -55,16 +55,14 @@
       <button class="btn btn-outline-warning btn-sm card-link" (click)="likePublication(publication._id)">
         <i class="fa fa-heart"></i> !
       </button>
-      <button class="btn btn-outline-info btn-sm card-link"><span class="badge"><i class="fa fa-bolt"></i></span>
-        Hotlist</button>
+      <a class="btn btn-outline-info btn-sm card-link" href="#addHotlist-{{publication._id}}" role="button" data-toggle="modal"><span class="badge"><i class="fa fa-bolt"></i></span>
+        Hotlist</a>
         <a *ngIf="publication.user._id == identity._id" href="#myModal-{{publication._id}}" role="button" data-toggle="modal" class="card-link btn btn-sm btn-outline-danger">
           <span class="badge"> <i class ="fa fa-times"></i></span> Eliminar</a>
     </div>
 
  </div>
 </div>
-
-
 
 <app-hotlist-popup [publication]="publication._id"></app-hotlist-popup>
 
