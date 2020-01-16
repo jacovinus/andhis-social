@@ -42,7 +42,7 @@ export class PublicationService {
     });
   }
 
-  getPublication(token:string,id:string):Observable<any>{
+  getPublication(token,id):Observable<any>{
 let headers =  new HttpHeaders()
 .set("Content-Type", "application/json")
 .set("Authorization",token);

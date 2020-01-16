@@ -30,6 +30,7 @@ import { HostlistSidebarComponent } from "./hostlist-sidebar/hostlist-sidebar.co
 import { HotlistPopupComponent } from "./hotlist-popup/hotlist-popup.component";
 import { PoliticsComponent } from "./components/politics/politics.component";
 import { PublicationDisplayComponent } from './components/publication/publication-display/publication-display.component';
+import { TextPreviewPipe } from './components/publication/publication-display/text-preview.pipe';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { PublicationDisplayComponent } from './components/publication/publicatio
     HostlistSidebarComponent,
     HotlistPopupComponent,
     PoliticsComponent,
-    PublicationDisplayComponent
+    PublicationDisplayComponent,
+    TextPreviewPipe
   ],
   imports: [
     BrowserModule,
