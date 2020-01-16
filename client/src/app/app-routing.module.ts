@@ -10,6 +10,7 @@ import { HotlistComponent } from "./components/hotlist/hotlist.component";
 import { ProfileComponent } from "./components/profile/profile.component";
 import { FollowingComponent } from "./components/following/following.component";
 import { MessagesRoutingModule } from "./components/messages/messages-routing.module";
+import { PublicationDisplayComponent } from './components/publication/publication-display/publication-display.component';
 
 const routes: Routes = [
   { path: "", component: HomeComponent },
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: "users/:page", component: UsersComponent },
   { path: "users", component: UsersComponent },
   { path: "publications/:page", component: TimelineComponent },
+  {path: "publication/:id",component: PublicationDisplayComponent},
   { path: "hotlist", component: HotlistComponent },
   { path: "hotlists", component: HotlistComponent },
   { path: "profile/:id", component: ProfileComponent },
