@@ -60,6 +60,12 @@ export class HotlistService {
       .set("Authorization", token);
     return this._http.get(this.url + "hotlists", { headers });
   }
+  getHotlistItems(token,hotlist):Observable<any> {
+    let headers = new HttpHeaders()
+    .set('Content-Type','application/json')
+    .set('Authorization',token);
+    return this._http.get(this.url+'hotlistitems/'+hotlist,{headers});
+  }
   addHotlistItem(token, hotlistitem: Hotlistitem): Observable<any> {
     let params = JSON.stringify(hotlistitem);
     let headers = new HttpHeaders()
@@ -67,4 +73,5 @@ export class HotlistService {
       .set("Authorization", token);
     return this._http.post(this.url + "hotlistitem", params, { headers });
   }
+  
 }

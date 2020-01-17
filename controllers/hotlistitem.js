@@ -22,12 +22,10 @@ const prueba = (req, res) => {
  * agregar select con hotlists & categorias
  */
 const saveHotlistItem = (req,res) => {
-    let UserId = req.user.sub;
     let params = req.body;
-    console.log(params);
     let hotlistitem = new HotListItem();
-    hotlistitem.list = params.hotlist; 
-    hotlistitem.user = UserId;
+    hotlistitem.list = params.list; 
+    hotlistitem.user = params.user._id;
     hotlistitem.publication = params.publication;
     hotlistitem.created_at = moment().unix();
     hotlistitem.save((err, hotlistItemStored)=> {
@@ -43,12 +41,25 @@ const saveHotlistItem = (req,res) => {
       if(err) return res.status(500).send({error: 'Error al eliminar el hotlistitem'});
       return res.status(200).send({message: 'hotlistitem eliminado correctamente'});
     });
-  
   }
 
+   const getHotlistItems = (req, res) => {
+     //obtener publicaciones del id de publicacion de hotlistitem
+     let hotlist = req.params.hotlist;
+      //let userId = hotlist.user;
+ 
   
+     let hotlistItems = HotListItem.find({'list': hotlist});
+      hotlistItems.populate('list user publication').exec((error,hotlistitems) => {
+       if(error) return res.status(500).send({message: 'No tiene permitido el acceso a la base de datos'});
+       if(!hotlistItems) return res.status(404).send({message: 'no se han encontrado los hotlistitems'});
+       return res.status(200).send({ hotlistitems });
+     })
+   }
+
 module.exports = {
       prueba,
+      getHotlistItems,
       saveHotlistItem,
       deleteHotlistItem
     }

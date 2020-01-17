@@ -5,6 +5,7 @@ import { HotlistService } from "../services/hotlist.service";
 import { Hotlistitem } from "../models/hotlistitem";
 import { Hotlist } from "../models/hotlist";
 import { NgModel } from "@angular/forms";
+import { Router } from '@angular/router';
 @Component({
   selector: "app-hotlist-popup",
   templateUrl: "./hotlist-popup.component.html",
@@ -24,7 +25,8 @@ export class HotlistPopupComponent implements OnInit {
   constructor(
     private _userService: UserService,
     private _publicationService: PublicationService,
-    private _hotlistService: HotlistService
+    private _hotlistService: HotlistService,
+    private _router: Router
   ) {
     this.token = this._userService.getToken();
     this.identity = this._userService.getIdentity();
@@ -41,6 +43,7 @@ export class HotlistPopupComponent implements OnInit {
         if (response.hotlistitem) {
           this.hotlistitem = response.hotlistitem;
           this.status = "success";
+          this._router.navigate(['/publications']);
         }
       },
       error => {

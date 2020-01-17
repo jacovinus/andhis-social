@@ -5,7 +5,6 @@ import { User } from "src/app/models/user";
 import { UserService } from "src/app/services/user.service";
 import { FollowService } from "src/app/services/follow.service";
 import { Follow } from "src/app/models/follow";
-
 @Component({
   selector: "app-following",
   templateUrl: "./following.component.html",
@@ -25,6 +24,9 @@ export class FollowingComponent implements OnInit {
   public url: string;
   public follows;
   public following;
+  public follow: Follow;
+  public followed;
+  public errorMessage;
 
   constructor(
     private _route: ActivatedRoute,
@@ -80,9 +82,9 @@ export class FollowingComponent implements OnInit {
         }
       },
       error => {
-        let errorMessage = <any>error;
-        console.log(errorMessage);
-        if (errorMessage != null) {
+        this.errorMessage = error;
+        console.log(this.errorMessage);
+        if (this.errorMessage != null) {
           this.status = "error";
         }
       }
@@ -90,9 +92,9 @@ export class FollowingComponent implements OnInit {
   }
 
   followUser(followed) {
-    let follow = new Follow("", this.identity._id, followed);
+    this.follow = new Follow("", this.identity._id, this.followed);
     let token = this._followService.getToken();
-    this._followService.addFollow(token, follow).subscribe(
+    this._followService.addFollow(token, this.follow).subscribe(
       response => {
         if (!response.follow) {
           this.status = "error";
@@ -102,7 +104,7 @@ export class FollowingComponent implements OnInit {
         }
       },
       error => {
-        let errorMessage = <any>error;
+        let errorMessage = error;
         console.log(errorMessage);
         if (errorMessage != null) {
           this.status = "error";
@@ -120,7 +122,7 @@ export class FollowingComponent implements OnInit {
         }
       },
       error => {
-        let errorMessage = <any>error;
+        let errorMessage = error;
         console.log(errorMessage);
         if (errorMessage != null) {
           this.status = "error";

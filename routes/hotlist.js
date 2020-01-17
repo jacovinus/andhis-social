@@ -19,8 +19,10 @@ api.put('/hotlist/:id',auth.ensureAuth,HotlistController.updateHotlist);
 
 // Routes HotList Item
 api.get('/hotlistitem/prueba', auth.ensureAuth, HotlistItemController.prueba);
+api.get('/hotlistitems/:hotlist',auth.ensureAuth, HotlistItemController.getHotlistItems);
 api.post('/hotlistitem', auth.ensureAuth, HotlistItemController.saveHotlistItem);
 api.delete('/hotlistitem/:id',auth.ensureAuth,HotlistItemController.deleteHotlistItem);
+
 
 module.exports = api;
 
