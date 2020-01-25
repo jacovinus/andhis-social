@@ -9,6 +9,7 @@
         <p>Seleccione el hotlist al que desea agregar la publicacion</p>
         <p class="h4">{{publication.title}}</p>
         <select class="custom-select" (change)="hotlistSelector($event)">
+          <option>Seleccione categoria</option>
           <option *ngFor="let listitem of list" [value]="listitem._id">{{listitem.listname}}</option>
         </select>
       </div>

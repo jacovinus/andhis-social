@@ -1,5 +1,5 @@
-<div *ngIf="identity">
-<div class="card">
+<div *ngIf="identity" class="d-md-none d-sm-none d-xs-none d-lg-block">
+<div class="card border-right">
 
   <div class="card-body" style="width: 100%;">
     <img *ngIf="identity" src="{{ url + 'get-image-user/' + user.image }}" class="img-thumbnail rounded-circle mt-2 ml-2" alt="" style="width: 50px;"/>

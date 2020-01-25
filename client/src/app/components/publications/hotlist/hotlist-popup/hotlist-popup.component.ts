@@ -1,11 +1,11 @@
 import { Component, OnInit, Input, NgModule } from "@angular/core";
-import { PublicationService } from "../services/publication.service";
-import { UserService } from "../services/user.service";
-import { HotlistService } from "../services/hotlist.service";
-import { Hotlistitem } from "../models/hotlistitem";
-import { Hotlist } from "../models/hotlist";
-import { NgModel } from "@angular/forms";
 import { Router } from '@angular/router';
+import { Hotlist } from 'src/app/models/hotlist';
+import { Hotlistitem } from 'src/app/models/hotlistitem';
+import { HotlistService } from 'src/app/services/hotlist.service';
+import { UserService } from 'src/app/services/user.service';
+import { PublicationService } from 'src/app/services/publication.service';
+
 @Component({
   selector: "app-hotlist-popup",
   templateUrl: "./hotlist-popup.component.html",
@@ -47,7 +47,7 @@ export class HotlistPopupComponent implements OnInit {
         }
       },
       error => {
-        let errorMessage = <any>error;
+        let errorMessage = error;
         console.log(errorMessage);
         this.status = "error";
       }
@@ -62,7 +62,7 @@ export class HotlistPopupComponent implements OnInit {
         }
       },
       error => {
-        let errorMessage = <any>error;
+        let errorMessage = error;
         console.log(errorMessage);
         this.status = "error";
       }

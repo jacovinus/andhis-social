@@ -1,6 +1,4 @@
-<div class="row">
-  <app-sidebar></app-sidebar>
-  <div class="col-lg-5 col-md-12">
+
     <div *ngIf="identity" class="new-publication mb-4">
 
       <a *ngIf="identity"  data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample"
@@ -16,24 +14,13 @@
       </div>
 
     </div>
+    <div class="publications-container">
     <!-- componente de publicaciones de usuario-->
     <div class="card border-0 mb-3" *ngFor="let publication of publications">
-      <div class="card-body bg-light" style="max-width: 100%;">
-        <div class="mt-4" *ngIf="publication.file != 'null'">
-          <img src="{{ url + 'publication/image/' + publication.file}}" alt="" class="img-fluid">
-        </div>
-        <a [routerLink]="['/publication/'+publication._id]">
-          <p class="h4 mt-4">{{publication.title}}</p>
-        </a>
-        <p class="mt-3" style="white-space: pre-line">{{(publication.text | textPreview: 400 : '...')}}</p>
-        <a *ngIf="publication.text.length > 400" [routerLink]="['/publication/'+publication._id]">
-          <p class="text-warning text-center mt-4">Continuar Leyendo</p>
-        </a>
-      </div>
-      <!-- barra de datos de autor de la publicacion-->
-      <div class="card-body bg-light">
-        <div class="mt-2">
-          <div class="float-left">
+       <!-- barra de datos de autor de la publicacion-->
+      <div class="card-body">
+        
+          <div class="d-inline align-middle">
             <img *ngIf="identity.image" src="{{ url + 'get-image-user/'+ publication.user.image}}"
               class="img-thumbnail rounded-circle mb-3 mt-2" width="40px">
             <a [routerLink]="['/profile/'+publication.user._id]" class="ml-2">
@@ -43,7 +30,7 @@
               <small> {{(publication.created_at | amFromUnix) | amLocale:'es' | amTimeAgo }}</small>
             </span>
           </div>
-          <div class="float-right">
+          <div class="d-inline float-right">
             <button class="btn btn-outline-warning btn-sm card-link" (click)="likePublication(publication._id)">
               <i class="fa fa-heart"></i> !
             </button>
@@ -55,8 +42,20 @@
               <span class="badge"> <i class="fa fa-times"></i></span> Eliminar</a>
           </div>
 
-        </div>
       </div>
+      <div class="card-body" style="max-width: 100%;">
+        <div class="timeline-img" *ngIf="publication.file != 'null'">
+          <img src="{{ url + 'publication/image/' + publication.file}}" alt="" class="img-fluid">
+        </div>
+        <a [routerLink]="['/publication/'+publication._id]">
+          <p class="h4 mt-4">{{publication.title}}</p>
+        </a>
+        <p class="mt-3" style="white-space: pre-line">{{(publication.text | textPreview: 400 : '...')}}</p>
+        <a *ngIf="publication.text.length > 400" [routerLink]="['/publication/'+publication._id]">
+          <p class="text-warning text-center mt-4">Continuar Leyendo</p>
+        </a>
+      </div>
+   
 
       <!--fin datos de autor-->
 
@@ -84,19 +83,16 @@
           </div>
         </div>
       </div>
+      <hr>
     </div>
-  </div>
-<div class="col-lg-4">
-  <app-hostlist-sidebar></app-hostlist-sidebar>
-</div>
-  
+ 
 
-</div>
-
-<hr>
-<div class="container">
-  <div class="col-10" *ngIf="publications && publications.length">
-    <button class="btn btn-outline-secondary mx-auto mt-3" (click)="viewMore()" *ngIf="!noMore">Ver mas
-      publicaciones</button>
   </div>
-</div>
+    <!-- Fin publicaciones-->
+    <div class="container">
+      <div class="col-10" *ngIf="publications && publications.length">
+        <button class="btn btn-outline-secondary mx-auto mt-3" (click)="viewMore()" *ngIf="!noMore">Ver mas
+          publicaciones</button>
+      </div>
+    </div>
+

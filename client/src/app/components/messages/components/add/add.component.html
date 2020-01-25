@@ -2,7 +2,12 @@
 <div class="col-lg-12">
     <h3>{{title}}</h3>
     <!-- Formulario envio -->
-    <p class="text-muted">- Los usuarios deben agregarse mutuamente para poder enviarse mensajes</p>
+    <div *ngIf="!follows.follwed" class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>{{identity.name}}</strong>, los usuarios deben seguirse mutuamente para poder enviarse mensajes.
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
     <div class="alert alert-success" *ngIf="status === 'success'">
         <small>El mensaje se ha enviado correctamente! </small>
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">

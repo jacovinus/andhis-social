@@ -4,33 +4,22 @@ import { AngularFontAwesomeModule } from "angular-font-awesome";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
-import { LoginComponent } from "./components/login/login.component";
-import { RegisterComponent } from "./components/register/register.component";
+import { LoginComponent } from "./components/users/login/login.component";
+import { RegisterComponent } from "./components/users/register/register.component";
 import { FormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
-import { HomeComponent } from "./components/home/home.component";
-import { UserEditComponent } from "./components/user-edit/user-edit.component";
+import { HomeComponent } from "./components/shared/home/home.component";
+import { UserEditComponent } from "./components/users/user-edit/user-edit.component";
 import { UsersComponent } from "./components/users/users.component";
-import { SidebarComponent } from "./components/sidebar/sidebar.component";
-import { PublicationComponent } from "./components/publication/publication.component";
-import { TimelineComponent } from "./components/timeline/timeline.component";
+import { SidebarComponent } from "./components/shared/sidebar/sidebar.component";
 import { MomentModule } from "angular2-moment";
-import { HotlistComponent } from "./components/hotlist/hotlist.component";
-import { HotlistitemComponent } from "./components/hotlistitem/hotlistitem.component";
-import { PublicationsComponent } from "./components/publications/publications.component";
-import { LikeComponent } from "./components/like/like.component";
-import { ProfileComponent } from "./components/profile/profile.component";
-import { FollowingComponent } from "./components/following/following.component";
-
-// Messaging Module
-//import { MessagesRoutingModule } from './components/messages/messages-routing.module';
+import { ProfileComponent } from "./components/users/profile/profile.component";
 import { MessagesModule } from "./components/messages/messages.module";
 import { MessagesRoutingModule } from "./components/messages/messages-routing.module";
-import { HostlistSidebarComponent } from "./hostlist-sidebar/hostlist-sidebar.component";
-import { HotlistPopupComponent } from "./hotlist-popup/hotlist-popup.component";
-import { PoliticsComponent } from "./components/politics/politics.component";
-import { PublicationDisplayComponent } from './components/publication/publication-display/publication-display.component';
-import { TextPreviewPipe } from './components/publication/publication-display/text-preview.pipe';
+import { PoliticsComponent } from "./components/shared/politics/politics.component";
+import { FollowingComponent } from './components/users/following/following.component';
+import { PublicationsModule } from './components/publications/publications.module';
+import { PublicationsRoutingModule } from './components/publications/publications.routing.module';
 
 @NgModule({
   declarations: [
@@ -41,30 +30,22 @@ import { TextPreviewPipe } from './components/publication/publication-display/te
     UserEditComponent,
     UsersComponent,
     SidebarComponent,
-    PublicationComponent,
-    TimelineComponent,
-    HotlistComponent,
-    HotlistitemComponent,
-    PublicationsComponent,
-    LikeComponent,
     ProfileComponent,
     FollowingComponent,
-    HostlistSidebarComponent,
-    HotlistPopupComponent,
     PoliticsComponent,
-    PublicationDisplayComponent,
-    TextPreviewPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MessagesRoutingModule,
+    PublicationsRoutingModule,
     NgbModule,
     AngularFontAwesomeModule,
     HttpClientModule,
     FormsModule,
     MomentModule,
-    MessagesModule
+    MessagesModule,
+    PublicationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

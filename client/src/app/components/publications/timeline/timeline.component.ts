@@ -5,16 +5,12 @@ import { Publication } from 'src/app/models/publication';
 import { PublicationService } from 'src/app/services/publication.service';
 import { UserService } from 'src/app/services/user.service';
 import { GLOBAL } from 'src/app/services/global';
-import { PublicationsComponent } from '../publications/publications.component';
-import { PublicationComponent } from '../publication/publication.component';
-import { FollowService } from 'src/app/services/follow.service';
-
 
 @Component({
   selector: 'app-timeline',
   templateUrl: './timeline.component.html',
   styleUrls: ['./timeline.component.css'],
-  providers: [UserService, PublicationService, FollowService]
+  providers: [UserService, PublicationService]
 })
 
 export class TimelineComponent implements OnInit {
@@ -38,12 +34,9 @@ export class TimelineComponent implements OnInit {
   public user:User;
   public publications:Publication[];
 
-
-  
   constructor(
     private _route : ActivatedRoute,
     private _router: Router,
-    private _followService: FollowService,
     private _userService: UserService,
     private _publicationService: PublicationService
   ) { 

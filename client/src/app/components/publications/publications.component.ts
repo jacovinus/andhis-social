@@ -4,12 +4,8 @@ import { PublicationService } from 'src/app/services/publication.service';
 import { UserService } from 'src/app/services/user.service';
 import { GLOBAL } from 'src/app/services/global';
 import { Router, ActivatedRoute, Params } from '@angular/router';
-import { User } from 'src/app/models/user';
 import { Like } from 'src/app/models/like';
-import { Follow } from 'src/app/models/follow';
-import { FollowService } from 'src/app/services/follow.service';
 import { LikeService } from 'src/app/services/like.service';
-import { Observable } from 'rxjs';
 
 // @ TODO revisar bug de getImageUser (ERROR 500)
  //@TODO : volver a listar publicaciones en pagina de timeline
