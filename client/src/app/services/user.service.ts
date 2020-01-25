@@ -3,7 +3,6 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { User } from "../models/user";
 import { GLOBAL } from "./global";
-
 @Injectable({
   providedIn: "root"
 })
@@ -79,7 +78,7 @@ export class UserService {
       .set("Authorization", this.getToken());
     return this._http.get(this.url + "users/" + page, { headers: headers });
   }
-  getUser(id): Observable<any> {
+  getUser(id):Observable<any>{
     let headers = new HttpHeaders()
       .set("Content-Type", "application/json")
       .set("Authorization", this.getToken());

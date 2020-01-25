@@ -1,15 +1,12 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
-import { LoginComponent } from "./components/login/login.component";
-import { RegisterComponent } from "./components/register/register.component";
-import { HomeComponent } from "./components/home/home.component";
-import { UserEditComponent } from "./components/user-edit/user-edit.component";
+import { LoginComponent } from "./components/users/login/login.component";
+import { RegisterComponent } from "./components/users/register/register.component";
+import { HomeComponent } from "./components/shared/home/home.component";
+import { UserEditComponent } from "./components/users/user-edit/user-edit.component";
 import { UsersComponent } from "./components/users/users.component";
-import { TimelineComponent } from "./components/timeline/timeline.component";
-import { HotlistComponent } from "./components/hotlist/hotlist.component";
-import { ProfileComponent } from "./components/profile/profile.component";
-import { FollowingComponent } from "./components/following/following.component";
-import { MessagesRoutingModule } from "./components/messages/messages-routing.module";
+import { ProfileComponent } from "./components/users/profile/profile.component";
+import { FollowingComponent } from './components/users/following/following.component';
 
 const routes: Routes = [
   { path: "", component: HomeComponent },
@@ -19,9 +16,6 @@ const routes: Routes = [
   { path: "user-edit", component: UserEditComponent },
   { path: "users/:page", component: UsersComponent },
   { path: "users", component: UsersComponent },
-  { path: "publications/:page", component: TimelineComponent },
-  { path: "hotlist", component: HotlistComponent },
-  { path: "hotlists", component: HotlistComponent },
   { path: "profile/:id", component: ProfileComponent },
   { path: "following/:id/:page", component: FollowingComponent }
   //{ path: "**", component: HomeComponent }

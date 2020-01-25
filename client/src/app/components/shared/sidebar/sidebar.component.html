@@ -1,0 +1,25 @@
+<div *ngIf="identity" class="d-md-none d-sm-none d-xs-none d-lg-block">
+<div class="card border-right">
+
+  <div class="card-body" style="width: 100%;">
+    <img *ngIf="identity" src="{{ url + 'get-image-user/' + user.image }}" class="img-thumbnail rounded-circle mt-2 ml-2" alt="" style="width: 50px;"/>
+    <a [routerLink]="['/profile/'+identity._id]" >
+      {{identity.nick}}
+      {{page}}
+    </a>
+  
+  </div>
+    <div class="card-body">
+      <p *ngIf="user.description" class="card-text">{{user.description}}</p>
+    <ul class="list-group list-group-flush">
+      <li *ngIf="stats.followed" class="list-group-item">Seguidores: <span class="badge badge-pill badge-primary">{{stats.followed}}</span></li>
+      <li *ngIf="stats.following" class="list-group-item">Siguiendo: <span class="badge badge-pill badge-primary">{{stats.following}}</span></li>
+      <li *ngIf="stats.publications" class="list-group-item">Publicaciones: <span class="badge badge-pill badge-primary">{{stats.publications}}</span></li>
+      <li *ngIf="stats.publications" class="list-group-item">Hotlist: <span class="badge badge-pill badge-primary">HotlistItems</span></li>
+    
+    </ul>
+  </div>
+
+</div>
+
+  </div>

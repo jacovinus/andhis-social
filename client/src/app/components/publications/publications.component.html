@@ -1,5 +1,5 @@
 <!-- componente de publicaciones de usuario-->
-<div class="card border-secondary mb-3" *ngFor="let publication of publications">
+<div class="card border-secondary mb-3 col-lg-8" *ngFor="let publication of publications">
   <div class="card-header">
 
     <p>
@@ -17,8 +17,10 @@
     <div *ngIf="publication.file != 'null'">
       <img src="{{ url + 'publication/image/' + publication.file}}" alt="" width="250px" class="float-left mr-3"/>
   </div>
-    <p class="h4 text-secondary">{{publication.title}}</p>
-    <p class="mt-3">{{publication.text}}</p>
+  <a [routerLink]="['/publication/'+publication._id]">
+    <p class="h4 mt-4">{{publication.title}}</p>
+  </a>
+    <p class="mt-3" style="white-space: pre-line">{{(publication.text | textPreview: 400 : '...')}}</p>
     <hr>
     <div class="mt-2">
       <button class="btn btn-outline-warning pull-right mr-3 ml-3 btn-sm" (click)="likePublication(publication._id)"

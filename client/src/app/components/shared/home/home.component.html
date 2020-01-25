@@ -1,0 +1,23 @@
+
+        <div class="container mt-3">
+            <div class="row">
+                <div class="col-lg-3">
+                    <app-sidebar></app-sidebar>
+                </div>
+                <p *ngIf="!identity">Please login if you have an account or register.</p>
+             <div class="col-lg-6">
+                <app-timeline *ngIf="identity"></app-timeline>
+             </div>
+             <div class="col-lg-3">
+                <app-hostlist-sidebar></app-hostlist-sidebar>
+             </div>
+                   
+                   
+
+            </div>
+            
+        </div>
+      
+
+
+
