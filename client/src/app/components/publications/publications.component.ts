@@ -4,10 +4,7 @@ import { PublicationService } from 'src/app/services/publication.service';
 import { UserService } from 'src/app/services/user.service';
 import { GLOBAL } from 'src/app/services/global';
 import { Router, ActivatedRoute, Params } from '@angular/router';
-import { User } from 'src/app/models/user';
 import { Like } from 'src/app/models/like';
-import { Follow } from 'src/app/models/follow';
-import { FollowService } from 'src/app/services/follow.service';
 import { LikeService } from 'src/app/services/like.service';
 
 // @ TODO revisar bug de getImageUser (ERROR 500)
@@ -39,7 +36,6 @@ export class PublicationsComponent implements OnInit {
 
 
   constructor(
-   
     private _route: ActivatedRoute,
     private _router: Router,
     private _userService: UserService,
@@ -85,9 +81,9 @@ export class PublicationsComponent implements OnInit {
         }
     },
     error => {
-    let errorMessage = <any>error;
+    let errorMessage = error;
     console.log(errorMessage);
-    if(errorMessage != null) {
+    if(errorMessage != null){
       this.status = 'error';
     }
     
@@ -115,12 +111,12 @@ actualPage(){
     }
     // devolver listado de publicaciones
     return this.getPublications(this.user,this.page);
-        });
+        })
 }
 
 public noMore = false;
 viewMore(){
-  this.page +=1;
+  this.page +=1
 if(this.page == this.total){
 this.noMore = true;
 
@@ -148,7 +144,7 @@ likePublication(liked) {
       }
     },
     error => {
-      let errorMessage = <any>error;
+      let errorMessage = error;
       console.log(errorMessage);
       if(errorMessage != null) {
         this.status = 'error';
@@ -166,7 +162,7 @@ unLikePublication(liked) {
       }
     },
     error => {
-      let errorMessage = <any>error;
+      let errorMessage = error;
       console.log(errorMessage);
       if(errorMessage!= null) {
         this.status = 'error';

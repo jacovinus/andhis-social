@@ -90,7 +90,6 @@ const getFollowedUsers = (req,res) => {
       let userId = req.params.id && req.params.page ? req.params.id : req.user.sub;
       let page = req.params.page ? req.params.page : 1;
       let itemsPerPage = 4;
-    
       Follow.find({ followed: userId }).populate('user').paginate(page, itemsPerPage, (err, follows, total) => {
           if (err) return res.status(500).send({ error: 'Server Error' });
           if (!follows) return res.status(404).send({ error: 'not being followed by other users'});

@@ -1,0 +1,38 @@
+<div class="container-fluid">
+
+    <p class="lead">{{title}}</p>
+  
+    <div *ngIf="followed" class="row row-cols-2">
+  
+      <div class="card border-secondary mb-3 col-lg-5 col-md-12 mr-1" *ngFor="let follow of followed">
+        <div class="card-header">
+          <a [routerLink]="['/profile/'+follow.user._id]">
+            <p class="lead pull-left">{{follow.user.name}} {{follow.user.surname}}</p>
+          </a>
+          <span *ngIf="follow.user._id != identity._id" class="pull-right">
+            <button *ngIf="!follow.user._id" class="btn btn-outline-success pull-right"
+              (click)="followUser(follow.user._id)"><i class="fa fa-binoculars"></i> Seguir</button>
+            <button *ngIf="follow.user._id" href="#" class="btn btn-outline-secondary btn-sm"
+              (click)="unFollowUser(follow.user._id)"> <i class="fa fa-ban"></i> Dejar de seguir</button>
+          </span>
+        </div>
+        <div class="card-body">
+          <img *ngIf="follow.user.image" class="img img-thumbnail pull-left mr-3"
+            src="{{ url + 'get-image-user/' + follow.user.image }}" width="100px" alt="">
+          <p style="color:rgb(77, 28, 28);"><i class="fa fa-user-circle"></i> {{follow.user.nick}}</p>
+          <p *ngIf="follow.user.description" class="text-secondary">
+            {{follow.user.description}}
+          </p>
+          <hr />
+          <p *ngIf="follow.user._id" class="badge badge-success"><i class="fa fa-binoculars"></i> Siguiendo </p>
+        </div>
+      </div>
+      <nav aria-label="Page navigation example">
+        <ul class="pagination">
+          <li *ngIf="page >1" class="page-item"><a class="page-link"
+              [routerLink]="['/followed',identity._id,prev_page]">Previous</a></li>
+          <li *ngIf="pages != page || !page" class="page-item"><a class="page-link"
+              [routerLink]="['/followed',identity._id,next_page]">Next</a></li>
+        </ul>
+      </nav>
+  </div>

@@ -1,0 +1,15 @@
+.publications-container{
+    max-height:90vh;
+    overflow: auto;
+    -ms-overflow-style: none;
+}
+.timeline-img {
+height:10em;
+overflow:hidden;
+transition: opacity 1s;
+opacity:.9;
+}
+
+.timeline-img img:hover{
+opacity: 1;
+}

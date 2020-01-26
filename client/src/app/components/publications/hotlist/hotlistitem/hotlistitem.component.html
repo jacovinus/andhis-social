@@ -1,0 +1,7 @@
+
+  <p class="bg-light" *ngFor="let hotlistitem of hotlistitems">
+    <a class="text-primary" [routerLink]="['/publication/'+hotlistitem.publication._id]">
+    {{hotlistitem.publication.title}}
+  </a>
+  </p>
+  
