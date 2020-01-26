@@ -1,32 +1,40 @@
 
   
-  <div class="container-fluid">
+  <div class="container">
       <div class="row">
         <div class="col-10">
         <div class="mt-3">
           <p class="lead">{{title}}</p>
       </div>
     </div>
-          <div class="card border-secondary mb-3 col-lg-5 ml-2 mr-2" *ngFor="let user of users">
-
-                 
+          <div class="card border-secondary col-lg-5 m-2" *ngFor="let user of users">
                <div class="card-body">
-                <a *ngIf="user._id != identity._id" [routerLink]="['/profile/'+user._id]"><p class="lead">{{user.name}} {{user.surname}}</p> </a>
-                <img *ngIf="user.image" class="img img-thumbnail pull-left mr-3" src="{{ url + 'get-image-user/' + user.image }}" width="100px" alt="">
-                <a class="tex-secondary" [routerLink]="['/profile/'+user._id]"><i class="fa fa-user-circle"></i> {{user.nick}}</a>
-                <p *ngIf="user.description" class="text-secondary">
-                  {{user.description}}
-                </p>
-                <hr/>
-                <div class="followers">
-                  <span *ngIf="user._id != identity._id" class="pull-right">
-                    <button *ngIf="follows.indexOf(user._id) <= 0" class="btn btn-outline-success pull-right" (click)="followUser(user._id)"><i class="fa fa-binoculars"></i> Seguir</button>
-                    <button  *ngIf="follows.indexOf(user._id) > 0" href="#" class="btn btn-outline-secondary btn-sm" (click)="unFollowUser(user._id)"> <i class="fa fa-ban"></i> Dejar de seguir</button>
-                    </span>
-                    <p *ngIf="follows.indexOf(user._id) > 0" class="badge badge-success"><i class="fa fa-binoculars"></i> Siguiendo </p>
-                </div>
+                <div class="row">
+                  <div class="user-image col-lg-2">
+                    <img *ngIf="user.image" class="img" src="{{ url + 'get-image-user/' + user.image }}" style="max-width: 50px;" alt="">
+                    </div>
+                  
+            
+                  <div class="userinfo col-lg-7">
+                    <p style="line-height:.5em; padding-bottom:0px; margin-bottom:5px;">
+                      <a *ngIf="user._id != identity._id" class="text-primary" [routerLink]="['/profile/'+user._id]">{{user.name}} {{user.surname}}</a>
+                      </p>
+                     <small *ngIf="user.description" class="text-secondary">
+                      {{user.description}}
+                    </small>
+                    </div>
+                    <div class="col-lg-3">
+                      <span *ngIf="user._id != identity._id">
+                        <button *ngIf="follows.indexOf(user._id) <= 0" class="btn btn-outline-success pull-right" (click)="followUser(user._id)"><i class="fa fa-binoculars"></i> Seguir</button>
+                        <button  *ngIf="follows.indexOf(user._id) > 0" href="#" class="btn btn-outline-primary btn-sm" (click)="unFollowUser(user._id)"> siguiendo</button>
+                        </span>
+                        <p *ngIf="follows.indexOf(user._id) > 0" class="badge badge-success"><i class="fa fa-binoculars"></i> Siguiendo </p>
                 
-                 
+
+                    </div>
+                  
+                  </div>
+               
             </div>
         </div>
         <nav aria-label="Page navigation example">
