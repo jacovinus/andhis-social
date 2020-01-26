@@ -14,12 +14,15 @@ import { Router,ActivatedRoute } from '@angular/router';
 export class SidebarComponent implements OnInit, DoCheck {
 public title;
 public identity;
-public user: User;
 public token;
 public stats;
 public status;
 public url;
 public page;
+public followed;
+public following;
+public publications;
+public user;
 
   constructor(
     private _userService: UserService,
@@ -29,18 +32,38 @@ public page;
   ) { 
     this.title = 'Sidebar content';
     this.identity = _userService.getIdentity();
-    this.stats = _userService.getStats();
     this.token = _userService.getToken();
+    this.user = _userService.getUser(this.identity._id)
     this.url = GLOBAL.url;
-    this.user = _userService.getIdentity();
     
   }
 
   ngOnInit() {
-  this._userService.getStats();
+  this.loadPage();
   }
   ngDoCheck(){
-    this.stats = this._userService.getStats();
+  
   }
+
+  loadPage(){
+this.getCounters(this.identity._id)
+
+  }
+
+
+  getCounters(id){
+    this._userService.getCounters(id).subscribe(
+      response => {
+      this.stats = response;
+      this.followed = this.stats.followed;
+      this.following = this.stats.following;
+      this.publications = this.stats.publications;
+      },
+      error => {
+        console.log(<any> error);
+      }
+    )
+  }
+
 
 }

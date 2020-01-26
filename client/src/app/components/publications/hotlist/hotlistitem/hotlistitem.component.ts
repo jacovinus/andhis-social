@@ -29,7 +29,7 @@ export class HotlistitemComponent implements OnInit {
     this._hotlistService.getHotlistItems(this.token, hotlist).subscribe(
       response => {
         if (response.hotlistitems) {
-          console.log(response);
+  
           this.hotlistitems = response.hotlistitems;
         }
       },

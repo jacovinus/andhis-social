@@ -20,7 +20,8 @@ import { PoliticsComponent } from "./components/shared/politics/politics.compone
 import { FollowingComponent } from './components/users/following/following.component';
 import { PublicationsModule } from './components/publications/publications.module';
 import { PublicationsRoutingModule } from './components/publications/publications.routing.module';
-
+import { NgxImageCompressService} from 'ngx-image-compress';
+import { FollowedComponent } from './components/users/followed/followed.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,6 +34,7 @@ import { PublicationsRoutingModule } from './components/publications/publication
     ProfileComponent,
     FollowingComponent,
     PoliticsComponent,
+    FollowedComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,7 +49,7 @@ import { PublicationsRoutingModule } from './components/publications/publication
     MessagesModule,
     PublicationsModule
   ],
-  providers: [],
+  providers: [NgxImageCompressService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

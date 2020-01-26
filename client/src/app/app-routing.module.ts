@@ -7,6 +7,7 @@ import { UserEditComponent } from "./components/users/user-edit/user-edit.compon
 import { UsersComponent } from "./components/users/users.component";
 import { ProfileComponent } from "./components/users/profile/profile.component";
 import { FollowingComponent } from './components/users/following/following.component';
+import { FollowedComponent } from './components/users/followed/followed.component';
 
 const routes: Routes = [
   { path: "", component: HomeComponent },
@@ -17,8 +18,8 @@ const routes: Routes = [
   { path: "users/:page", component: UsersComponent },
   { path: "users", component: UsersComponent },
   { path: "profile/:id", component: ProfileComponent },
-  { path: "following/:id/:page", component: FollowingComponent }
-  //{ path: "**", component: HomeComponent }
+  { path: "following/:id/:page", component: FollowingComponent },
+  { path: "followed/:id/:page", component: FollowedComponent },
 ];
 
 @NgModule({

@@ -1,24 +1,29 @@
 <div *ngIf="identity" class="d-md-none d-sm-none d-xs-none d-lg-block">
 <div class="card border-right">
 
-  <div class="card-body" style="width: 100%;">
-    <img *ngIf="identity" src="{{ url + 'get-image-user/' + user.image }}" class="img-thumbnail rounded-circle mt-2 ml-2" alt="" style="width: 50px;"/>
+  <div class="card-body">
+    <img *ngIf="identity" src="{{ url + 'get-image-user/' + identity.image }}" class="img-thumbnail rounded-circle mt-2 ml-2" alt="" style="width: 50px;"/>
     <a [routerLink]="['/profile/'+identity._id]" >
       {{identity.nick}}
-      {{page}}
     </a>
-  
-  </div>
-    <div class="card-body">
-      <p *ngIf="user.description" class="card-text">{{user.description}}</p>
+    <p *ngIf="identity" class="card-text">{{identity.description}}</p>
     <ul class="list-group list-group-flush">
-      <li *ngIf="stats.followed" class="list-group-item">Seguidores: <span class="badge badge-pill badge-primary">{{stats.followed}}</span></li>
-      <li *ngIf="stats.following" class="list-group-item">Siguiendo: <span class="badge badge-pill badge-primary">{{stats.following}}</span></li>
-      <li *ngIf="stats.publications" class="list-group-item">Publicaciones: <span class="badge badge-pill badge-primary">{{stats.publications}}</span></li>
-      <li *ngIf="stats.publications" class="list-group-item">Hotlist: <span class="badge badge-pill badge-primary">HotlistItems</span></li>
+      <li *ngIf="followed" class="list-group-item">
+        <a [routerLink]="['/followed',identity._id,1]">
+        Seguidores: <span class="badge badge-pill badge-primary">{{followed}}</span>
+      </a>
+      </li>
+      <li *ngIf="following" class="list-group-item">
+        <a [routerLink]="['/following',identity._id,1]">
+        Siguiendo: <span class="badge badge-pill badge-primary">{{following}}</span>
+      </a>
+      </li>
+      <li *ngIf="publications" class="list-group-item">Publicaciones: <span class="badge badge-pill badge-primary">{{publications}}</span></li>
+      <li *ngIf="publications" class="list-group-item">Hotlist: <span class="badge badge-pill badge-primary">HotlistItems</span></li>
     
     </ul>
-  </div>
+  <span class="text-center p-3"><small>Publicaciones: {{publications}}</small></span>
+</div>
 
 </div>
 

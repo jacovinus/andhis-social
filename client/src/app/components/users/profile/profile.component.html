@@ -4,18 +4,20 @@
       <div class="row">
         <div class="col-lg-4 col-md-4 col-sm-12">
           <img src="{{url + 'get-image-user/'+user.image}}" width="100%" alt="...">
+        
         </div>
         <div class="col-lg-6 col-md-6 col-sm-12 mt-4">
           <h5 class="card-title">{{user.name}} {{user.surname}}</h5>
           <p class="text-muted">Alias: {{user.nick}}</p>
           <p class="card-text">{{this.user.description}}</p>
+          <a *ngIf="identity._id === id" [routerLink]="['/user-edit']"> Editar mis datos</a>
         </div>
       </div>
       <div class="card-body mt-4" style="margin:0;padding:0;background:#f5f5f5;">
         <div class="d-flex flex-row">
           <a [routerLink]="['/following',identity._id,1]" class="text-center p-3"><small>Siguiendo:
               {{stats.following}}</small></a>
-          <span class="text-center p-3"><small>Seguidores: {{stats.followed}}</small></span>
+          <a [routerLink]="['/followed',identity._id,1]" class="text-center p-3"><small>Seguidores: {{stats.followed}}</small></a>
           <span class="text-center p-3"><small>Publicaciones: {{stats.publications}}</small></span>
         </div>
       </div>
