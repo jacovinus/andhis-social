@@ -21,6 +21,7 @@ public follow;
 public following;
 public followed;
 public user;
+public id;
 
   constructor(
     private _route: ActivatedRoute,
@@ -49,7 +50,7 @@ public user;
           response => {
     if(response.user){
     this.user = response.user;
-  
+    this.id = response.user._id;
     if(response.following && response.following._id){
       this.following = true;
     }else{

@@ -30,7 +30,6 @@ export class HostlistSidebarComponent implements OnInit {
     this._hotlistService.getHotlists(this.token).subscribe(
       response => {
         this.hotlists = response.hotlists;
-        console.log(this.hotlists);
         this.status = "success";
       },
       error => {
