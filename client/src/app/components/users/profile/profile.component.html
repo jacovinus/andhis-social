@@ -1,0 +1,58 @@
+<div class="container">
+  <div class="row">
+    <div class="card mt-3 col-12" *ngIf="user">
+      <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-12">
+          <img src="{{url + 'get-image-user/'+user.image}}" width="100%" alt="...">
+        
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12 mt-4">
+          <h5 class="card-title">{{user.name}} {{user.surname}}</h5>
+          <p class="text-muted">Alias: {{user.nick}}</p>
+          <p class="card-text">{{this.user.description}}</p>
+          <a *ngIf="identity._id === id" [routerLink]="['/user-edit']"> Editar mis datos</a>
+        </div>
+      </div>
+      <div class="card-body mt-4" style="margin:0;padding:0;background:#f5f5f5;">
+        <div class="d-flex flex-row">
+          <a [routerLink]="['/following',identity._id,1]" class="text-center p-3"><small>Siguiendo:
+              {{stats.following}}</small></a>
+          <a [routerLink]="['/followed',identity._id,1]" class="text-center p-3"><small>Seguidores: {{stats.followed}}</small></a>
+          <span class="text-center p-3"><small>Publicaciones: {{stats.publications}}</small></span>
+        </div>
+      </div>
+      <div class="card-body">
+        <a *ngIf="followed" href="#" class="card-link">:D te sigue!</a>
+        <a *ngIf="!followed && user._id != identity._id" href="#" class="card-link"><i class="fa fa-ban"></i> no te
+          sigue</a>
+        <a *ngIf="user._id == identity._id" href="#" class="card-link"><i class="fa fa-user"></i> Eres tu!</a>
+        <a *ngIf="following" href="#" class="card-link">seguido</a>
+        <span *ngIf="user._id != identity._id" class="pull-right">
+          <button *ngIf="!following" class="btn btn-outline-success pull-right" (click)="followUser(user._id)"
+            (mouseenter)="mouseEnter(user._id)" (mouseleave)="mouseLeave(user._id)"
+            [class.btn-danger]="user._id == followUserOver">
+            <span *ngIf="user._id == followUserOver; else following">
+              Dejar de seguir
+            </span>
+            <ng-template #following>
+              Siguiendo
+            </ng-template>
+            <i class="fa fa-binoculars"></i> Seguir
+          </button>
+          <button *ngIf="following" href="#" class="btn btn-outline-secondary btn-sm" (click)="unfollowUser(user._id)">
+            <i class="fa fa-ban"></i> Dejar de seguir</button>
+        </span>
+      </div>
+    </div>
+    <div *ngIf="!stats.publications" class="new-publication">
+      <app-publication></app-publication>
+    </div>
+    <div class="mt-3 col-12" *ngIf="user && stats.publications">
+      <p>Publicaciones:</p>
+      <app-publications [user]="user._id"></app-publications>
+    </div>
+
+
+  </div>
+
+</div>

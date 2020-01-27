@@ -1,0 +1,55 @@
+<div class="container">
+  <div class="row">
+    
+    <div class="card col-lg-7 mt-3">
+      <div class="card-body bg-light">
+          <div class="mt-2">
+            <div class="float-left">
+              <img *ngIf="user" src="{{ url + 'get-image-user/'+ user.image}}"
+                class="img-thumbnail rounded-circle mb-3 mt-2" width="40px">
+              <a [routerLink]="['/profile/'+user._id]" class="ml-2">
+                <small>{{user.nick}}</small>
+              </a>
+              <span class="text-secondary">
+                <small> {{(publication.created_at | amFromUnix) | amLocale:'es' | amTimeAgo }}</small>
+              </span><br>
+              <small>{{user.description}}</small>
+            </div>
+            <div class="float-right">
+              <button class="btn btn-outline-warning btn-sm card-link">
+                <i class="fa fa-heart"></i> !
+              </button>
+              <a class="btn btn-outline-info btn-sm card-link" href="#addHotlist-{{publication._id}}" role="button"
+                data-toggle="modal"><span class="badge"><i class="fa fa-bolt"></i></span>
+                Hotlist</a>
+              <a *ngIf="publication.user == identity._id" href="#myModal-{{publication._id}}" role="button"
+                data-toggle="modal" class="card-link btn btn-sm btn-outline-danger">
+                <span class="badge"> <i class="fa fa-times"></i></span> Eliminar</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-body">
+          <h1 class="h1">{{publication.title}}</h1>
+          <div class="mt-4" *ngIf="publication.file != 'null'">
+              <img src="{{ url + 'publication/image/' + publication.file}}" alt="" class="img-fluid">
+            </div>
+          </div>
+        <div class="card-body">
+          <p style="white-space: pre-line">{{publication.text}}</p>
+        </div>
+        </div>
+        <div class="col-lg-3">
+          <app-hostlist-sidebar></app-hostlist-sidebar>
+        </div>
+
+
+
+
+  </div>
+
+  
+
+</div>
+
+

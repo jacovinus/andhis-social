@@ -46,10 +46,21 @@ export class FollowService {
         : this.url + "following";
     return this._http.get(url, { headers: headers });
   }
-  getMyFollows(token):Observable<any>{
+  getFollowed(token, userId = null, page = 1): Observable<any> {
     let headers = new HttpHeaders()
-    .set("Content-Type","application/json")
-    .set("Authorization",token);
-    return this._http.get(this.url + "get-my-follows/true",{headers});
+      .set("Content-Type", "application/json")
+      .set("Authorization", this.getToken());
+    let url =
+      userId != null
+        ? this.url + "followed/" + userId + "/" + page
+        : this.url + "followed";
+    return this._http.get(url, { headers: headers });
+  }
+  
+  getMyFollows(token): Observable<any> {
+    let headers = new HttpHeaders()
+      .set("Content-Type", "application/json")
+      .set("Authorization", token);
+    return this._http.get(this.url + "get-my-follows/true", { headers });
   }
 }

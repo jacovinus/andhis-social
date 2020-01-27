@@ -88,9 +88,9 @@ const getPublication = (req,res)=> {
         if(err) return res.status(500).send({message : 'Error al devolver la publicacion'});
         if(!publication) return res.status(404).send({message : 'No se ha encontrado la publicacion'});
         return res.status(200).send({publication});
-
-    })
+       })
 }
+
 
 const deletePublication = (req, res) => {
     let publicationId = req.params.id;
