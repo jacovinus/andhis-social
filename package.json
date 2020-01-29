@@ -2,7 +2,7 @@
   "name": "andhis",
   "version": "1.0.0",
   "description": "Andhis social networking",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "test",
     "start": "nodemon server.js"
