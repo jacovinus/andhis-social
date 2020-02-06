@@ -1,8 +1,8 @@
-<div class="container">
+<div class="container news">
   <div class="row">
     
-    <div class="card col-lg-7 mt-3">
-      <div class="card-body bg-light">
+    <div class="card col-lg-7 mt-3 news-body">
+      <div class="publication-display-header">
           <div class="mt-2">
             <div class="float-left">
               <img *ngIf="user" src="{{ url + 'get-image-user/'+ user.image}}"
@@ -29,7 +29,7 @@
           </div>
         </div>
 
-        <div class="card-body">
+        <div class="">
           <h1 class="h1">{{publication.title}}</h1>
           <div class="mt-4" *ngIf="publication.file != 'null'">
               <img src="{{ url + 'publication/image/' + publication.file}}" alt="" class="img-fluid">

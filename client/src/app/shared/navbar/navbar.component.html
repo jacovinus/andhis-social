@@ -1,0 +1,50 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+    <a class="navbar-brand" [routerLink]="['']">
+      <img src="../assets/img/andhis-logo.png" height="30px" />
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul *ngIf="identity" class="navbar navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/hotlist']" href="#" alt="hotlist"><i class="fa fa-bolt"></i> Hotlist</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/users']" alt="users"><i class="fa fa-users"></i> Usuarios</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/publications/1']"><i class="fa fa-edit"></i> Publicaciones</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/messages']" alt="Messages"><i class="fa fa-comments"></i> Mensajes</a>
+        </li>
+      </ul>
+      <ul *ngIf="!identity" class="navbar navbar-nav navbar-right">
+        <li class="nav-item"><a class="nav-link" [routerLink]="['/login']" routerLinkActive="router-link-active"><i
+              class="fa fa-sign-in"></i> Iniciar Sesion</a></li>
+        <li class="nav-item"><a class="nav-link" [routerLink]="['/register']" routerLinkActive="router-link-active"><i
+              class="fa fa-user-plus"></i> Registrarse</a></li>
+      </ul>
+      <ul class="navbar navbar-nav float-right d-block">
+        <div class="btn-group">
+          <button *ngIf="identity" type="button" class="btn btn-outline-secondary dropdown-toggle" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            <img src="{{url+'get-image-user/'+identity.image }}" class="rounded" width="25px" alt="">
+            <span class="h6"> {{identity.nick}}</span>
+          </button>
+          <div *ngIf="identity" class="dropdown-menu">
+            <a class="dropdown-item" [routerLink]="['/profile/'+identity._id]">Perfil</a>
+            <a class="dropdown-item" href="#">Contactos</a>
+            <a class="dropdown-item" href="#">Listas</a>
+            <a class="dropdown-item" [routerLink]="['/user-edit']" routerLinkActive="router-link-active">Mis Datos</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#" (click)="logout()">Cerrar sesión</a>
+          </div>
+        </div>
+      </ul>
+    </div>
+    </div>
+  </nav>

@@ -1,17 +1,19 @@
-<div class="card">
-  <div class="card-header bg-light text-success">
+<div class="card hotlist">
+  <div class="card-header bg-light text-primary">
     <h5> <i class="fa fa-bolt"></i> Hotlists</h5>
   </div>
-  <div class="card-body">
+  <div>
     <div *ngFor="let hotlist of hotlists">
-      <h4 class="card-header">
-      <img src="{{url+'get-image-user/'+hotlist.user.image}}" class="rounded-circle" style="max-width:35px;"/>
+      <div class="hl-sidebar-header">
+       <p>
         {{hotlist.listname}}
-      </h4>
-
+        <span class="badge badge-pill badge-primary">{{hotlistCount}}</span>
+        </p> 
+        <small>Por: {{hotlist.user.name}} {{hotlist.user.surname}}</small>
+      </div>
       <ul class="list-group list-group-flush">
         <li class="list-group-item">
-          <app-hotlistitem [hotlist]="hotlist._id"></app-hotlistitem>
+          <app-hotlistitem #htcount [hotlist]="hotlist._id"></app-hotlistitem>
         </li>
       </ul>
     </div>

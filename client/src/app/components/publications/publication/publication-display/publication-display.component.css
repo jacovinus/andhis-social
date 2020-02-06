@@ -1,0 +1,10 @@
+.news {
+    height:100vh;
+}
+.publication-display-header {
+    height:100px;
+}
+
+.news-body {
+    overflow-y: scroll;
+}
