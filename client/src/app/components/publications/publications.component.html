@@ -28,21 +28,20 @@
         <i class="fa fa-heart"></i> Me gusta!
       </button>
       <button class="btn btn-outline-info btn-sm pull-right"><span class="badge"><i class="fa fa-bolt"></i></span>
-        Añadir a Hotlist</button>
+        Hotlist</button>
     </div>
 
   </div>
 </div>
 <div class="container">
   <div class="col-10" *ngIf="publications && publications.length">
-    <button class="btn btn-outline-secondary mx-auto mt-3" (click)="viewMore()" *ngIf="!noMore">Ver mas
-      publicaciones</button>
+    <button class="btn btn-outline-secondary mx-auto mt-3" (click)="viewMore()" *ngIf="!noMore">More</button>
   </div>
 </div>
 
 <!--<span *ngIf="user._id != identity._id" class="pull-right">
-  <button *ngIf="follows.indexOf(user._id) < 0" class="btn btn-outline-success pull-right" (click)="followUser(user._id)"><i class="fa fa-binoculars"></i> Seguir</button>
-  <button  *ngIf="follows.indexOf(user._id) > 0" href="#" class="btn btn-outline-secondary btn-sm" (click)="unFollowUser(user._id)"> <i class="fa fa-ban"></i> Dejar de seguir</button>
+  <button *ngIf="follows.indexOf(user._id) < 0" class="btn btn-outline-success pull-right" (click)="followUser(user._id)"><i class="fa fa-binoculars"></i> Follow</button>
+  <button  *ngIf="follows.indexOf(user._id) > 0" href="#" class="btn btn-outline-secondary btn-sm" (click)="unFollowUser(user._id)"> <i class="fa fa-ban"></i> Unfollow</button>
   </span>-->
 
 

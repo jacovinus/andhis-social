@@ -2,7 +2,7 @@
 
 
 <div class="card-header">
-  <i class="fa fa-edit"></i>  Nueva publicación
+  <i class="fa fa-edit"></i>  New Publication
 </div>
 <div class="card-body">
     <form action="" #newPubForm="ngForm" (ngSubmit)="onSubmit(newPubForm);sendPublication($event)">
@@ -13,21 +13,19 @@
       
             <textarea name="text" #text="ngModel" [(ngModel)]="publication.text" class="form-control form-control-sm" id="publication" placeholder="Texto" rows="3" required></textarea>
           </div>
-          <div class="alert alert-success" *ngIf="this.status=='success'">Publicacion realizada correctamente</div>
-          <div class="alert alert-danger" *ngIf="this.status=='error'">No se ha podido realizar la publicacion</div>
+          <div class="alert alert-success" *ngIf="this.status=='success'">Publication success!</div>
+          <div class="alert alert-danger" *ngIf="this.status=='error'">Unable to publish</div>
             <div class="input-group mb-3">
               <div class="custom-file">
                 <input type="file" class="custom-file-input" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" (change)="fileChangeEvent($event)">
-                <label class="custom-file-label" for="inputGroupFile04">Subir imagen</label>
+                <label class="custom-file-label" for="inputGroupFile04">Upload image</label>
               </div>
               <div class="input-group-append">
                 <button class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon04"><i class="fa fa-photo"></i></button>
               </div>
             </div>
-          <button type="submit" data-dismiss="modal" class="btn btn-outline-success pull-right">Publicar</button>
+          <button type="submit" data-dismiss="modal" class="btn btn-outline-success pull-right">Publish</button>
     </form>
-
-
 </div>
 </div>
 
