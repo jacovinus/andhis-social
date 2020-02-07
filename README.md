@@ -1,4 +1,36 @@
 #Andhis social news
-Red social de noticias desarrollada en Angular, NodeJs y NoSQL databases con información encriptada con Tokens
 
-Para interesados en colaborar pueden contactar con jacovinus@gmail.com
+News and notes social network with Angular 8, Bootstrap Front End and Nodejs Api server with MongoDb, Mongoose and express.
+
+For collabs, please contact: jacovinus@gmail.com
+
+The FE is wrapped in the server for simpler development
+
+For starting the app:
+
+linux / osx
+
+Install Angular CLI
+https://angular.io/guide/setup-local
+sudo install -g @angular/cli
+
+Install a local mongodb
+
+OSX:
+https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/
+
+Linux:
+https://docs.mongodb.com/manual/administration/install-on-linux/
+
+Windows:
+https://docs.mongodb.com/manual/tutorial/install-mongodb-on-windows/
+
+
+
+1 - Run npm install in the root folder (API server).
+2 - Run npm install in the client folder (Angular FE).
+3 - Run a local MongoDb server (//:2707)
+4 - npm start on root folder
+5- npm start on client folder (localhost:4200)
+6 - Enjoy!
+
