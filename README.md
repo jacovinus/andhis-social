@@ -25,12 +25,9 @@ https://docs.mongodb.com/manual/administration/install-on-linux/
 Windows:
 https://docs.mongodb.com/manual/tutorial/install-mongodb-on-windows/
 
-
-
-1 - Run npm install in the root folder (API server).
-2 - Run npm install in the client folder (Angular FE).
-3 - Run a local MongoDb server (//:2707)
-4 - npm start on root folder
-5- npm start on client folder (localhost:4200)
-6 - Enjoy!
-
+  Run npm install in the root folder (API server). 
+  Run npm install in the client folder (Angular FE). 
+  Run a local MongoDb server (//:2707). 
+  npm start on root folder. 
+  npm start on client folder (localhost:4200). 
+  Enjoy!. 
