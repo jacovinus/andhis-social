@@ -22,6 +22,7 @@ import { PublicationsModule } from './components/publications/publications.modul
 import { PublicationsRoutingModule } from './components/publications/publications.routing.module';
 import { NgxImageCompressService} from 'ngx-image-compress';
 import { FollowedComponent } from './components/users/followed/followed.component';
+import { NavbarComponent } from './shared/navbar/navbar.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,6 +36,7 @@ import { FollowedComponent } from './components/users/followed/followed.componen
     FollowingComponent,
     PoliticsComponent,
     FollowedComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,

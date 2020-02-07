@@ -10,19 +10,19 @@
     <ul class="list-group list-group-flush">
       <li *ngIf="followed" class="list-group-item">
         <a [routerLink]="['/followed',identity._id,1]">
-        Seguidores: <span class="badge badge-pill badge-primary">{{followed}}</span>
+        Followers: <span class="badge badge-pill badge-primary">{{followed}}</span>
       </a>
       </li>
       <li *ngIf="following" class="list-group-item">
         <a [routerLink]="['/following',identity._id,1]">
-        Siguiendo: <span class="badge badge-pill badge-primary">{{following}}</span>
+        Following: <span class="badge badge-pill badge-primary">{{following}}</span>
       </a>
       </li>
-      <li *ngIf="publications" class="list-group-item">Publicaciones: <span class="badge badge-pill badge-primary">{{publications}}</span></li>
+      <li *ngIf="publications" class="list-group-item">Publications: <span class="badge badge-pill badge-primary">{{publications}}</span></li>
       <li *ngIf="publications" class="list-group-item">Hotlist: <span class="badge badge-pill badge-primary">HotlistItems</span></li>
     
     </ul>
-  <span class="text-center p-3"><small>Publicaciones: {{publications}}</small></span>
+  <span class="text-center p-3"><small>Publications: {{publications}}</small></span>
 </div>
 
 </div>

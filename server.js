@@ -9,9 +9,9 @@ mongoose.connect('mongodb://localhost:27017/_db_andhis_',{useNewUrlParser : true
 .then(()=>{
     //crear servidor
 app.listen(port,()=>{
-    console.log('Servidor corriendo en localhost:' + port);
+    console.log('Server connected at localhost::' + port);
 }
 );
-    console.log('[[La conexion a la base de datos _db_andhis_ se ha realizado correctamente');
+    console.log('Db connected');
 })
 .catch(err => console.log(err));

@@ -3,35 +3,35 @@
     <div class="col-8 mt-3">
       <h4 class="p">{{title}}</h4>
       <hr>
-      <div class="alert alert-warning" *ngIf="status=='error'">No se ha podido registrar el nuevo usuario</div>
-      <div class="alert alert-success" *ngIf="status=='success'">Usuario registrado correctamente, <a [routerLink]="['/login']" routerLinkActive="router-link-active">Identifícate aquí</a> </div>
+      <div class="alert alert-warning" *ngIf="status=='error'">Unable to register new user</div>
+      <div class="alert alert-success" *ngIf="status=='success'">User registered successfuly, <a [routerLink]="['/login']" routerLinkActive="router-link-active">Login Here!</a> </div>
     <form #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm)" class="col-10">
     <div class="form-group">
-    <label for="name">Nombre</label>
+    <label for="name">Name</label>
     <input type="text" name="name" #name="ngModel" [(ngModel)]="user.name" class="form-control" required>
     <div *ngIf="!name.valid && name.touched" class="alert alert-warning" role="alert">
-      Nombre requerido
+      Name required
     </div>
     </div>
     <div class="form-group">
-    <label for="surname">Apellido</label>
+    <label for="surname">Surname</label>
     <input type="text" name="surname" #surname="ngModel" [(ngModel)]="user.surname" class="form-control" required>
     <div *ngIf="!surname.valid && surname.touched" class="alert alert-warning" role="alert">
-      Apellido requerido
+      Surname required
     </div>
     </div>
     <div class="form-group"> 
     <label for="nick">Nick</label>
     <input type="text" name="nick" #nick="ngModel" [(ngModel)]="user.nick" class="form-control" required>
     <div *ngIf="!nick.valid && nick.touched" class="alert alert-warning" role="alert">
-      Correo electronico requerido
+      Nick required
     </div>
     </div>
     <div class="form-group">
     <label for="email">Email</label>
     <input type="email" name="email" #email="ngModel" [(ngModel)]="user.email" class="form-control" required>
     <div *ngIf="!email.valid && email.touched" class="alert alert-warning" role="alert">
-      Correo electronico requerido
+      Email reqiured
     </div>
     </div>
     <div class="form-group">
@@ -42,11 +42,11 @@
     <label for="password">Password</label>
     <input type="password" name="password" #password="ngModel" [(ngModel)]="user.password" class="form-control" required>
     <div *ngIf="!password.valid && password.touched" class="alert alert-warning" role="alert">
-      La contraseña es obligatoria!
+      password required
     </div>
     </div>
     <p>
-      Al registrarte confirmas que haz leído las políticas de uso de Andhis.
+      If you register to Andhis you accept the politics.
     </p>
     <input type="submit" value="{{title}}" class="btn btn-warning"/>
     </form>

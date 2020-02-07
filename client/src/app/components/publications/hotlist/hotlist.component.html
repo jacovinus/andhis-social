@@ -8,7 +8,7 @@
       </div>
       <div class="card border-secondary mb-3" *ngIf="identity">
         <div class="card-header">
-          <i class="fa fa-bolt"></i> Nuevo Hotlist
+          <i class="fa fa-bolt"></i> New Hotlist
         </div>
         <div class="card-body">
           <form #newHotlistForm="ngForm" (ngSubmit)="onSubmit(newHotlistForm)">
@@ -16,12 +16,12 @@
               <input type="text" name="listname" #listname="ngModel" [(ngModel)]="hotlist.listname" class="form-control"
                 id="listname">
               <div>
-                <div class="alert alert-success" *ngIf="this.status=='success'">Hotlist creado correctamente</div>
-                <div class="alert alert-danger" *ngIf="this.status=='error'">No se ha podido crear el Hotlist</div>
+                <div class="alert alert-success" *ngIf="this.status=='success'">Hotlist created successfuly</div>
+                <div class="alert alert-danger" *ngIf="this.status=='error'">Hotlist not created</div>
               </div>
 
             </div>
-            <button type="submit" class="btn btn-outline-success pull-right">Crear Hotlist</button>
+            <button type="submit" class="btn btn-outline-success pull-right">Create Hotlist</button>
           </form>
         </div>
       </div>
@@ -40,7 +40,7 @@
           <p class="badge badge-primary">
             {{(hotlist.created_at | amFromUnix) | amLocale:'es' | amTimeAgo }}
           </p>
-          <button *ngIf="identity._id === hotlist.user._id" class="btn btn-sm btn-warning pull-right" (click)="deleteHotlist(hotlist._id)">Eliminar
+          <button *ngIf="identity._id === hotlist.user._id" class="btn btn-sm btn-warning pull-right" (click)="deleteHotlist(hotlist._id)">Eliminate
             Hotlist</button>
         </div>
 

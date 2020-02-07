@@ -1,0 +1,15 @@
+.hotlist{
+    height:100vh;
+    overflow:auto;
+}
+.hl-sidebar-header {
+    margin-top:10px;
+    padding:10px;
+    line-height: 10px;
+    border-bottom:1px solid lightgray;
+    border-top:1px solid lightgray;
+}
+.hl-sidebar-header p{
+color: grey;
+font-weight: bold;
+}
