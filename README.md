@@ -34,5 +34,5 @@ https://docs.mongodb.com/manual/tutorial/install-mongodb-on-windows/
   - npm start on root folder.
   - npm start on client folder (localhost:4200).
  -  Enjoy!. 
- - 
+ 
 [Under GNU General Public License v3.0](https://github.com/jacovinus/andhis-social/blob/master/LICENSE)
