@@ -8,31 +8,31 @@
     <div class="row">
       <div class="col-lg-8">
         <div class="form-group">
-          <label for="name">Nombre</label>
+          <label for="name">Name</label>
           <input type="text" name="name" #name="ngModel" [(ngModel)]="user.name" class="form-control" required>
           <div *ngIf="!name.valid && name.touched" class="alert alert-warning" role="alert">
-            Nombre requerido
+            Name required
           </div>
         </div>
         <div class="form-group">
-          <label for="surname">Apellido</label>
+          <label for="surname">Surname</label>
           <input type="text" name="surname" #surname="ngModel" [(ngModel)]="user.surname" class="form-control" required>
           <div *ngIf="!surname.valid && surname.touched" class="alert alert-warning" role="alert">
-            Apellido requerido
+            Surname required
           </div>
         </div>
         <div class="form-group">
           <label for="nick">Nick</label>
           <input type="text" name="nick" #nick="ngModel" [(ngModel)]="user.nick" class="form-control" required>
           <div *ngIf="!nick.valid && nick.touched" class="alert alert-warning" role="alert">
-            Correo electronico requerido
+        Nick required
           </div>
         </div>
         <div class="form-group">
           <label for="email">Email</label>
           <input type="email" name="email" #email="ngModel" [(ngModel)]="user.email" class="form-control" required>
           <div *ngIf="!email.valid && email.touched" class="alert alert-warning" role="alert">
-            Correo electronico requerido
+            Email required
           </div>
         </div>
         <div class="form-group">
@@ -40,7 +40,7 @@
           <input type="text" name="tel" #tel="ngModel" [(ngModel)]="user.tel" class="form-control">
         </div>
         <div class="form-group">
-          <label for="description">Sobre mi:</label>
+          <label for="description">About me:</label>
           <textarea name="description" id="description" cols="30" rows="4" #description="ngModel"
             [(ngModel)]="user.description" class="form-control"></textarea>
         </div>
@@ -53,15 +53,15 @@
           <div>
             <img class="card-img-top" src="{{url + 'get-image-user/'+ user.image}}" alt="" *ngIf="user.image">
             <div class="card-body">
-              <h5 card-title>Su imagen de perfil</h5>
+              <h5 card-title>Your profile image</h5>
               <div class="form-group">
                 <div class="input-group">
                   <input type="file" (change)="fileChangeEvent($event)" id="inputGroupFile04">
                 </div>
               </div>
-              <div class="alert alert-warning" *ngIf="status=='error'">No se ha podido registrar el nuevo usuario</div>
-              <div class="alert alert-success" *ngIf="status=='success'">Usuario Actualizado correctamente <a
-                  [routerLink]="['/']">Volver al inicio</a></div>
+              <div class="alert alert-warning" *ngIf="status=='error'">Unable to update user</div>
+              <div class="alert alert-success" *ngIf="status=='success'">User updated successfuly <a
+                  [routerLink]="['/']">Back to Home</a></div>
             </div>
           </div>
         </div>

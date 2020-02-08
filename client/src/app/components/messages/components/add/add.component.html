@@ -3,20 +3,20 @@
     <h3>{{title}}</h3>
     <!-- Formulario envio -->
     <div *ngIf="!follows.follwed" class="alert alert-warning alert-dismissible fade show" role="alert">
-        <strong>{{identity.name}}</strong>, los usuarios deben seguirse mutuamente para poder enviarse mensajes.
+        <strong>{{identity.name}}</strong>, users most follow each other to send messages
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
     <div class="alert alert-success" *ngIf="status === 'success'">
-        <small>El mensaje se ha enviado correctamente! </small>
+        <small>Message sended successfully!  </small>
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
     </div>
     <form #formAdd="ngForm" (ngSubmit)="onSubmit(formAdd)" class="form form-group" action="">
         <p>
-            <label for="para">Para: </label>
+            <label for="para">To: </label>
             <!-- Listado de seguidores -->
             <select name="receiver" *ngIf="follows" #receiver="ngModel" [(ngModel)]="message.receiver" class="form-control" required id="selector">
                 <option *ngFor="let follow of follows" value="{{follow.user._id}}">
@@ -25,10 +25,10 @@
             </select>
         </p>
         <p>
-            <label for="mensaje">Mensaje:</label>
+            <label for="message">Message:</label>
             <textarea style="white-space:pre" name="text" #text="ngModel" [(ngModel)]="message.text" class="form-control" required id="text" cols="30" rows="10"></textarea>
             <span *ngIf="!text.valid && text.touched">
-                El mensaje es obligatorio!
+                You need to write a message
             </span>
         </p>
         <input type="submit" value="{{title}}" class="btn btn-success">

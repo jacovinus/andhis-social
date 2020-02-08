@@ -15,7 +15,7 @@
 
     </div>
     <div class="publications-container">
-    <!-- componente de publicaciones de usuario-->
+    <!-- user publications component-->
     <div class="card border-0 mb-3" *ngFor="let publication of publications">
        <!-- barra de datos de autor de la publicacion-->
       <div class="card-body">
@@ -66,19 +66,19 @@
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h4 class="modal-title">Eliminar publicacion</h4>
+              <h4 class="modal-title">Delete publication</h4>
               <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 
             </div>
             <div class="modal-body">
-              <p>Desea eliminar la publicacion</p>
+              <p>Do you want to delete the publication</p>
               <p class="h4">{{publication.title}}</p>
-              <p class="text-danger"><small>Los cambios no podran ser revertidos.</small></p>
+              <p class="text-danger"><small>The changes couldn't be reverted</small></p>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
               <button type="button" data-dismiss="modal" (click)="deletePublication(publication._id)"
-                class="btn btn-primary">Eliminar publicacion</button>
+                class="btn btn-primary">Delete publication</button>
             </div>
           </div>
         </div>
@@ -91,8 +91,7 @@
     <!-- Fin publicaciones-->
     <div class="container">
       <div class="col-10" *ngIf="publications && publications.length">
-        <button class="btn btn-outline-secondary mx-auto mt-3" (click)="viewMore()" *ngIf="!noMore">Ver mas
-          publicaciones</button>
+        <button class="btn btn-outline-secondary mx-auto mt-3" (click)="viewMore()" *ngIf="!noMore">More</button>
       </div>
     </div>
 

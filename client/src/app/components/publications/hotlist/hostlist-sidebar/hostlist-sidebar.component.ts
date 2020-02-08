@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from "@angular/core";
+import { Component, OnInit, Input, ViewChild, ElementRef } from "@angular/core";
 import { UserService } from 'src/app/services/user.service';
 import { HotlistService } from 'src/app/services/hotlist.service';
 import { Hotlist } from 'src/app/models/hotlist';
@@ -14,10 +14,11 @@ export class HostlistSidebarComponent implements OnInit {
   public identity: any;
   public token: string;
   public status: string;
+  public hotlistCount: number;
   public hotlists: Hotlist[];
   public publications: Publication[];
   public url:string;
-
+@ViewChild('htcount',{static:false})htcount:number;
   constructor(
     private _userService: UserService,
     private _hotlistService: HotlistService
@@ -25,11 +26,15 @@ export class HostlistSidebarComponent implements OnInit {
     this.identity = this._userService.getIdentity();
     this.token = this._userService.getToken();
     this.url = GLOBAL.url;
+
   }
+
   getHotlists(adding = false) {
     this._hotlistService.getHotlists(this.token).subscribe(
       response => {
         this.hotlists = response.hotlists;
+        this.hotlistCount = this.hotlists.length;
+        console.log(this.htcount);
         this.status = "success";
       },
       error => {

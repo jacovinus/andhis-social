@@ -25,10 +25,10 @@
                     </div>
                     <div class="col-lg-3">
                       <span *ngIf="user._id != identity._id">
-                        <button *ngIf="follows.indexOf(user._id) <= 0" class="btn btn-outline-success pull-right" (click)="followUser(user._id)"><i class="fa fa-binoculars"></i> Seguir</button>
-                        <button  *ngIf="follows.indexOf(user._id) > 0" href="#" class="btn btn-outline-primary btn-sm" (click)="unFollowUser(user._id)"> siguiendo</button>
+                        <button *ngIf="follows.indexOf(user._id) <= 0" class="btn btn-outline-success pull-right" (click)="followUser(user._id)"><i class="fa fa-binoculars"></i> Follow</button>
+                        <button  *ngIf="follows.indexOf(user._id) > 0" href="#" class="btn btn-outline-primary btn-sm" (click)="unFollowUser(user._id)"> Following</button>
                         </span>
-                        <p *ngIf="follows.indexOf(user._id) > 0" class="badge badge-success"><i class="fa fa-binoculars"></i> Siguiendo </p>
+                        <p *ngIf="follows.indexOf(user._id) > 0" class="badge badge-success"><i class="fa fa-binoculars"></i> Following </p>
                 
 
                     </div>

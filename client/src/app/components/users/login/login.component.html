@@ -3,25 +3,25 @@
     <div class="col-8 mt-3">
       <h1 class="p">{{title}}</h1>
       <hr>
-      <div class="alert alert-warning" *ngIf="status=='error'">No ha podido ingresar el usuario</div>
-      <div class="alert alert-warning" *ngIf="status=='success'">Bienvenido a Andhis!!</div>
+      <div class="alert alert-warning" *ngIf="status=='error'">Unable to signin</div>
+      <div class="alert alert-warning" *ngIf="status=='success'">Wellcome to Andhis!!</div>
     <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)" class="col-10">
     <div class="form-group">
     <label for="email">Email</label>
     <input type="email" name="email" #email="ngModel" [(ngModel)]="user.email" class="form-control" required>
     <div *ngIf="!email.valid && email.touched" class="alert alert-warning" role="alert">
-      Correo electronico no es correcto
+      Incorrect email
     </div>
     </div>
     <div class="form-group">
     <label for="password">Password</label>
     <input type="password" name="password" #password="ngModel" [(ngModel)]="user.password" class="form-control" required>
     <div *ngIf="!password.valid && password.touched" class="alert alert-warning" role="alert">
-      La contraseña es obligatoria!
+      Password is mandatory!
     </div>
     </div>
     <p>
-      Al Iniciar sesión confirmas que haz leído las políticas de uso de Andhis.
+      If you login you accept the policies of Andhies.
     </p>
     <input type="submit" value="{{title}}" class="btn btn-success"/>
     </form>

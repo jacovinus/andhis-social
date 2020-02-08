@@ -11,9 +11,9 @@
           </a>
           <span *ngIf="follow.user._id != identity._id" class="pull-right">
             <button *ngIf="!follow.user._id" class="btn btn-outline-success pull-right"
-              (click)="followUser(follow.user._id)"><i class="fa fa-binoculars"></i> Seguir</button>
+              (click)="followUser(follow.user._id)"><i class="fa fa-binoculars"></i> Follow</button>
             <button *ngIf="follow.user._id" href="#" class="btn btn-outline-secondary btn-sm"
-              (click)="unFollowUser(follow.user._id)"> <i class="fa fa-ban"></i> Dejar de seguir</button>
+              (click)="unFollowUser(follow.user._id)"> <i class="fa fa-ban"></i> Unfollow</button>
           </span>
         </div>
         <div class="card-body">
@@ -24,7 +24,7 @@
             {{follow.user.description}}
           </p>
           <hr />
-          <p *ngIf="follow.user._id" class="badge badge-success"><i class="fa fa-binoculars"></i> Siguiendo </p>
+          <p *ngIf="follow.user._id" class="badge badge-success"><i class="fa fa-binoculars"></i> Following </p>
         </div>
       </div>
       <nav aria-label="Page navigation example">
