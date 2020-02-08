@@ -6,13 +6,15 @@ import { PoliticsComponent } from './politics/politics.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+import { PublicationsModule } from '../publications/publications.module';
 
 @NgModule({
   declarations: [HomeComponent, NavbarComponent, PoliticsComponent, SidebarComponent],
   imports: [
     CommonModule,
     HttpClientModule,
-    RouterModule
+    RouterModule,
+    PublicationsModule
   ],
   exports: [HomeComponent, NavbarComponent, PoliticsComponent, SidebarComponent]
 })

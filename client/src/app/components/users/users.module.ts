@@ -10,7 +10,9 @@ import { FollowedComponent } from './followed/followed.component';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { UsersRoutingModule } from './users.routing.module';
-
+import { FormsModule } from '@angular/forms';
+import { SharedModule } from '../shared/shared.module';
+import { PublicationsModule } from '../publications/publications.module';
 
 @NgModule({
   declarations: [UsersComponent, 
@@ -24,7 +26,10 @@ import { UsersRoutingModule } from './users.routing.module';
   imports: [
     CommonModule,
     HttpClientModule,
-    RouterModule
+    RouterModule,
+    FormsModule,
+    SharedModule,
+    PublicationsModule
   ],
   exports: [
     UsersComponent, 
