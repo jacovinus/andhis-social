@@ -14,7 +14,6 @@ const userSchema = schema({
     description: String,
     password : String,
     role : String,
-    tel : Number,
     gettoken: Boolean,
     image : String
 
