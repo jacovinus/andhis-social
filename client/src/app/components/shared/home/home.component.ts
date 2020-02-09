@@ -1,9 +1,10 @@
 import { Component, OnInit, DoCheck } from '@angular/core';
 import { User } from 'src/app/models/user';
-import { UserService } from 'src/app/services/user.service';
+
 import { GLOBAL } from 'src/app/services/global';
 import { PublicationService } from 'src/app/services/publication.service';
 import { FollowService } from 'src/app/services/follow.service';
+import { UserService } from '../../../services/user.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',

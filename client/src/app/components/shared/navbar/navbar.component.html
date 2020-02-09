@@ -37,8 +37,8 @@
           </button>
           <div *ngIf="identity" class="dropdown-menu">
             <a class="dropdown-item" [routerLink]="['/profile/'+identity._id]">Profile</a>
-            <a class="dropdown-item" href="#">Users</a>
-            <a class="dropdown-item" href="#">Hotlists</a>
+            <a class="dropdown-item" [routerLink]="['/users']">Users</a>
+            <a class="dropdown-item" [routerLink]="['/hotlist']">Hotlists</a>
             <a class="dropdown-item" [routerLink]="['/user-edit']" routerLinkActive="router-link-active">Edit my profile</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="#" (click)="logout()">Logout</a>
