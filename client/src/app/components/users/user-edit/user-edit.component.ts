@@ -4,7 +4,7 @@ import { User } from 'src/app/models/user';
 import { UserService } from 'src/app/services/user.service';
 import { UploadService } from 'src/app/services/upload.service';
 import { GLOBAL } from 'src/app/services/global';
-import { NgxImageCompressService } from 'ngx-image-compress';
+
 
 @Component({
   selector: 'app-user-edit',
@@ -26,7 +26,7 @@ export class UserEditComponent implements OnInit {
       private _router:Router,
       private _userService:UserService,
       private _uploadService:UploadService,
-      private _imageCompress: NgxImageCompressService
+      
     ) { 
       this.title = 'Actualizar mis datos';
       this.user = _userService.getIdentity();

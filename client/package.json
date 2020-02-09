@@ -30,7 +30,6 @@
     "fs": "0.0.1-security",
     "jquery": "^3.4.1",
     "material-icons": "^0.3.1",
-    "ngx-image-compress": "^8.0.4",
     "popper": "^1.0.1",
     "popper.js": "^1.16.0",
     "rxjs": "~6.5.4",
