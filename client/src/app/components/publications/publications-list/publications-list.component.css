@@ -1,0 +1,51 @@
+.publication-list-container {
+    max-width:100%;
+    display:flex;
+    justify-content: space-around;
+    flex-wrap:wrap;
+}
+.publication-list-header{
+    padding:10px;
+    display:flex;
+    justify-content: space-between;
+    flex-wrap:wrap;
+    align-items: center;
+}
+.publication-list-img{
+    height: 8em;
+    max-width:100%;
+    overflow:hidden;
+}
+.publication-list-img img{
+    max-width:100%;
+}
+
+.publication-list-title{
+    font-size:1.5em;
+}
+.publication-list-content{
+  margin-top:1em;
+padding:10px;
+
+}
+
+.publication-list-actions{
+   min-width:100px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:5px;
+}
+.bb{
+    border-bottom:1px solid lightgray;
+    padding-bottom:.75em;
+}
+.pubcard{
+    border: 1px solid lightgray;
+    min-width:340px;
+    padding:0px;
+    margin:10px;
+    width:30%;
+    border-radius:5px;
+    box-shadow: 3px 3px 9px lightgray;
+}

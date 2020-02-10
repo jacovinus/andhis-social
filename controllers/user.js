@@ -19,7 +19,6 @@ const saveUser = (req, res) => {
             user.email = params.email;
             user.description = params.description;
             user.nick = params.nick;
-            user.tel = params.tel;
             user.role = 'ROLE_USER';
             user.image = null;
             User.find({ $or: [

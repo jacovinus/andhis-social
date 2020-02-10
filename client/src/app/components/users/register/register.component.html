@@ -35,10 +35,6 @@
     </div>
     </div>
     <div class="form-group">
-    <label for="tel">Tel</label>
-    <input type="text" name="tel" #tel="ngModel" [(ngModel)]="user.tel" class="form-control">
-    </div>
-    <div class="form-group">
     <label for="password">Password</label>
     <input type="password" name="password" #password="ngModel" [(ngModel)]="user.password" class="form-control" required>
     <div *ngIf="!password.valid && password.touched" class="alert alert-warning" role="alert">

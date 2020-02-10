@@ -1,9 +1,8 @@
 import { Component, OnInit, DoCheck } from '@angular/core';
 import { GLOBAL } from 'src/app/services/global';
 import { User } from 'src/app/models/user';
-import { UserService } from 'src/app/services/user.service';
 import { Router,ActivatedRoute } from '@angular/router';
-
+import { UserService } from '../../../services/user.service';
 
 @Component({
   selector: 'app-sidebar',

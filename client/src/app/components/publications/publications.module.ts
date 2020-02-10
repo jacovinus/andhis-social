@@ -13,12 +13,13 @@ import { HostlistSidebarComponent } from "./hotlist/hostlist-sidebar/hostlist-si
 import { TextPreviewPipe } from './publication/publication-display/text-preview.pipe';
 import { RouterModule } from '@angular/router';
 import { PublicationDisplayComponent } from './publication/publication-display/publication-display.component';
-
+import { PublicationsListComponent } from './publications-list/publications-list.component';
 @NgModule({
   declarations: [
     PublicationComponent,
     PublicationsComponent,
     PublicationDisplayComponent,
+PublicationsListComponent,
     LikeComponent,
     HotlistComponent,
     HotlistitemComponent,

@@ -7,7 +7,6 @@ export class User {
         public email:string,
         public description:string,
         public password:string,
-        public tel: string,
         public role:string,
         public image:string,
         public gettoken:string,

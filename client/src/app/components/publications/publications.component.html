@@ -1,5 +1,8 @@
 <!-- componente de publicaciones de usuario-->
-<div class="card border-secondary mb-3 col-lg-8" *ngFor="let publication of publications">
+<div class="container">
+
+
+<div class="card border-secondary mb-3" *ngFor="let publication of publications">
   <div class="card-header">
 
     <p>
@@ -33,15 +36,11 @@
 
   </div>
 </div>
+</div>
 <div class="container">
   <div class="col-10" *ngIf="publications && publications.length">
     <button class="btn btn-outline-secondary mx-auto mt-3" (click)="viewMore()" *ngIf="!noMore">More</button>
   </div>
 </div>
-
-<!--<span *ngIf="user._id != identity._id" class="pull-right">
-  <button *ngIf="follows.indexOf(user._id) < 0" class="btn btn-outline-success pull-right" (click)="followUser(user._id)"><i class="fa fa-binoculars"></i> Follow</button>
-  <button  *ngIf="follows.indexOf(user._id) > 0" href="#" class="btn btn-outline-secondary btn-sm" (click)="unFollowUser(user._id)"> <i class="fa fa-ban"></i> Unfollow</button>
-  </span>-->
 
 
