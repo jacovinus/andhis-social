@@ -33,7 +33,7 @@
           <button *ngIf="identity" type="button" class="btn btn-outline-secondary dropdown-toggle" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
             <img src="{{url+'get-image-user/'+identity.image }}" class="rounded" width="25px" alt="">
-            <span class="h6"> {{identity.nick}}</span>
+            <span class="p ml-2"> {{identity.nick}}</span>
           </button>
           <div *ngIf="identity" class="dropdown-menu">
             <a class="dropdown-item" [routerLink]="['/profile/'+identity._id]">Profile</a>

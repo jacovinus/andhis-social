@@ -1,0 +1,85 @@
+
+<h3 class="mt-3 mb-3 ml-3 bb">Publications</h3>
+    <div class="publication-list-container">
+      <!-- user publications component-->
+      <div class="mb-3 pubcard" *ngFor="let publication of publications">
+        <!-- barra de datos de autor de la publicacion-->
+        <div class="publication-list-header">
+          <div class="user-image">
+            <img *ngIf="identity.image" src="{{ url + 'get-image-user/'+ publication.user.image}}"
+              class="img-thumbnail rounded-circle mb-3" width="40px">
+            <a [routerLink]="['/profile/'+publication.user._id]" class="ml-2">
+              <small>{{publication.user.nick}}</small>
+            </a>
+            <span class="text-secondary">
+              <small> {{(publication.created_at | amFromUnix) | amLocale:'es' | amTimeAgo }}</small>
+            </span>
+          </div>
+          <!--action buttons -->
+          <div class="publication-list-actions">
+            <button class="btn btn-outline-warning btn-sm" (click)="likePublication(publication._id)">
+              <i class="fa fa-heart"></i> !
+            </button>
+            <a class="btn btn-outline-info btn-sm" href="#addHotlist-{{publication._id}}" role="button"
+              data-toggle="modal"><span class="badge"><i class="fa fa-bolt"></i></span>
+              !</a>
+            <a *ngIf="publication.user._id == identity._id" href="#myModal-{{publication._id}}" role="button"
+              data-toggle="modal" class="btn btn-sm btn-outline-danger">
+              <span class="badge"> <i class="fa fa-times"></i></span> Eliminar</a>
+          </div>
+
+        </div>
+        <!-- publication-->
+        <div class="publication-list-body">
+          <div class="publication-list-img" *ngIf="publication.file != 'null'">
+            <img src="{{ url + 'publication/image/' + publication.file}}" alt=""/>
+          </div>
+          <div class="publication-list-content">
+            <a [routerLink]="['/publication/'+publication._id]">
+              <p class="publication-list-title">{{publication.title}}</p>
+            </a>
+            <p class="mt-3" style="white-space: pre-line">{{(publication.text | textPreview: 150 : '...')}}</p>
+            <a *ngIf="publication.text.length > 400" [routerLink]="['/publication/'+publication._id]">
+              <p class="text-warning text-center mt-4">Continuar Leyendo</p>
+            </a>
+
+          </div>
+      
+        </div>
+
+        <app-hotlist-popup [publication]="publication._id"></app-hotlist-popup>
+
+        <!--Modal HTML-->
+        <div id="myModal-{{publication._id}}" class="modal fade">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title">Delete publication</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+
+              </div>
+              <div class="modal-body">
+                <p>Do you want to delete the publication</p>
+                <p class="h4">{{publication.title}}</p>
+                <p class="text-danger"><small>The changes couldn't be reverted</small></p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" data-dismiss="modal" (click)="deletePublication(publication._id)"
+                  class="btn btn-primary">Delete publication</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+      </div>
+
+
+    </div>
+    <!-- Fin publicaciones-->
+    <div class="container">
+      <div class="col-10" *ngIf="publications && publications.length">
+        <button class="btn btn-outline-secondary mx-auto mt-3" (click)="viewMore()" *ngIf="!noMore">More</button>
+      </div>
+    </div>
+

@@ -1,10 +1,15 @@
-.news {
-    height:100vh;
+.publications-container{
+    max-height:90vh;
+    overflow: auto;
+    -ms-overflow-style: none;
 }
-.publication-display-header {
-    height:100px;
+.timeline-img {
+height:10em;
+overflow:hidden;
+transition: opacity 1s;
+opacity:.9;
 }
 
-.news-body {
-    overflow-y: scroll;
+.timeline-img img:hover{
+opacity: 1;
 }

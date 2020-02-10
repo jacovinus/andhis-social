@@ -14,9 +14,11 @@ import { SharedModule } from './components/shared/shared.module';
 import { UsersModule } from './components/users/users.module';
 import { UsersRoutingModule } from './components/users/users.routing.module';
 import { AngularFontAwesomeModule } from "angular-font-awesome";
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+
   ],
   imports: [
     BrowserModule,

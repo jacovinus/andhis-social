@@ -73,7 +73,6 @@ export class HotlistComponent implements OnInit, DoCheck {
         }
       );
   }
-  //@TODO delete hotlist
   deleteHotlist(id) {
     this._hotlistService.deleteHotlist(this.token, id).subscribe(
       response => {

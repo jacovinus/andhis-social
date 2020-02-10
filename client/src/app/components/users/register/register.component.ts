@@ -21,7 +21,7 @@ public status:string;
   ) { 
     // initiates the new user with a mock profile image
     this.title = 'Ingresa tus datos y Registrate';
-    this.user = new User('','','','','','','','','','','','','');
+    this.user = new User('','','','','','','','','','','','');
   }
 
 ngOnInit() {}
