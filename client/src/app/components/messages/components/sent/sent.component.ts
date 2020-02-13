@@ -39,7 +39,7 @@ export class SentComponent implements OnInit {
     private _messageService: MessageService
   ) {
     this.url = GLOBAL.url;
-    this.title = "Mensajes enviados";
+    this.title = "Sent";
     this.token = this._userService.getToken();
     this.identity = this._userService.getIdentity();
   }

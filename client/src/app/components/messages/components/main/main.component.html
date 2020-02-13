@@ -1,5 +1,4 @@
-<div class="container mt-4">
-
+<div class="mt-2 messages">
  <div class="col-lg-4">
     <h3>{{title}}</h3>
 </div>
@@ -10,7 +9,7 @@
       <a class="nav-item nav-link" id="nav-sent-tab" data-toggle="tab" [routerLink]="['sent']" role="tab" aria-controls="nav-contact" aria-selected="false">Sent</a>
     </div>
   </nav>
-  <div class="tab-content" id="nav-tabContent">
+  <div class="tab-content messages-container" id="nav-tabContent">
     <router-outlet></router-outlet>
   </div>
 </div>

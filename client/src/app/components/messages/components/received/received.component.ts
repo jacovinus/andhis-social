@@ -38,7 +38,7 @@ private _messageService: MessageService,
 private _followService: FollowService
     ){
         this.url = GLOBAL.url;
-        this.title = "Mensajes recibidos";
+        this.title = "Received";
         this.token = this._userService.getToken();
         this.identity = this._userService.getIdentity();
     }

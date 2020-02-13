@@ -1,0 +1,14 @@
+.messages{
+    background:white;
+    padding:10px;
+    box-shadow:2px 2px 6px lightgray;
+    border-radius:5px;
+}
+
+.messages-container{
+    border-left:1px solid lightgray;
+    border-right:1px solid lightgray;
+    border-bottom:1px solid lightgray;
+  
+    padding:10px;
+}
