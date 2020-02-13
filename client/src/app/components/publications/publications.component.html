@@ -1,6 +1,8 @@
 <!-- componente de publicaciones de usuario-->
-<div class="container">
 
+  <div class="col-10" *ngIf="publications && publications.length">
+    <button class="btn btn-outline-secondary mx-auto mt-3" (click)="viewMore()" *ngIf="!noMore">More</button>
+  </div>
 
 <div class="card border-secondary mb-3" *ngFor="let publication of publications">
   <div class="card-header">
@@ -36,11 +38,3 @@
 
   </div>
 </div>
-</div>
-<div class="container">
-  <div class="col-10" *ngIf="publications && publications.length">
-    <button class="btn btn-outline-secondary mx-auto mt-3" (click)="viewMore()" *ngIf="!noMore">More</button>
-  </div>
-</div>
-
-

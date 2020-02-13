@@ -1,19 +1,19 @@
         
-        <div class="container mt-3">
+        <div class="home container-fluid">
 
             <div class="row">
-                <div class="col-lg-3">
+                <div class="col-lg-2 mt-2">
                     <app-sidebar></app-sidebar>
                 </div>
                 <p *ngIf="!identity">Please login if you have an account or register.</p>
-             <div class="col-lg-6">
-                <app-timeline *ngIf="identity"></app-timeline>
+             <div class="col-lg-7">
+                 <router-outlet></router-outlet>
+              <!-- <app-timeline *ngIf="identity"></app-timeline> -->  
              </div>
-             <div class="col-lg-3">
+             <div class="col-lg-3 mt-2">
                 <app-hostlist-sidebar></app-hostlist-sidebar>
              </div>
             </div>
-            
         </div>
       
 

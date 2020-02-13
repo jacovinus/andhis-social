@@ -1,10 +1,17 @@
-<div class="container-fluid">
 
-  <p class="lead">{{title}}</p>
 
-  <div *ngIf="following" class="row row-cols-2">
+  <nav aria-label="Page navigation example">
+    <ul class="pagination">
+      <li *ngIf="page >1" class="page-item"><a class="page-link"
+          [routerLink]="['/following',identity._id,prev_page]">Previous</a></li>
+      <li *ngIf="pages != page || !page" class="page-item"><a class="page-link"
+          [routerLink]="['/following',identity._id,next_page]">Next</a></li>
+    </ul>
+  </nav>
 
-    <div class="card border-secondary mb-3 col-lg-5 col-md-12 mr-1" *ngFor="let follow of following">
+  <div *ngIf="following" class="row">
+
+    <div class="card border-secondary mb-3 col-lg-12" *ngFor="let follow of following">
       <div class="card-header">
         <a [routerLink]="['/profile/'+follow.followed._id]">
           <p class="lead pull-left">{{follow.followed.name}} {{follow.followed.surname}}</p>
@@ -27,12 +34,5 @@
         <p *ngIf="follow.followed._id" class="badge badge-success"><i class="fa fa-binoculars"></i> Following </p>
       </div>
     </div>
-    <nav aria-label="Page navigation example">
-      <ul class="pagination">
-        <li *ngIf="page >1" class="page-item"><a class="page-link"
-            [routerLink]="['/following',identity._id,prev_page]">Previous</a></li>
-        <li *ngIf="pages != page || !page" class="page-item"><a class="page-link"
-            [routerLink]="['/following',identity._id,next_page]">Next</a></li>
-      </ul>
-    </nav>
+
 </div>
