@@ -3,6 +3,13 @@
     display:flex;
     justify-content: space-around;
     flex-wrap:wrap;
+    height:100vh;
+    overflow-y: scroll;
+
+}
+.publication-list-body{
+    display:flex;
+    justify-content:space-around;
 }
 .publication-list-header{
     padding:10px;
@@ -12,14 +19,13 @@
     align-items: center;
 }
 .publication-list-img{
-    height: 8em;
-    max-width:100%;
+   width:40%;
+   height:150px;
     overflow:hidden;
 }
 .publication-list-img img{
-    max-width:100%;
+height:100%;
 }
-
 .publication-list-title{
     font-size:1.5em;
 }
@@ -27,6 +33,9 @@
   margin-top:1em;
 padding:10px;
 
+}
+.publication-list-content a{
+color:gray;
 }
 
 .publication-list-actions{
@@ -42,10 +51,10 @@ padding:10px;
 }
 .pubcard{
     border: 1px solid lightgray;
-    min-width:340px;
     padding:0px;
     margin:10px;
-    width:30%;
+    background:white;
+    width:100%;
     border-radius:5px;
     box-shadow: 3px 3px 9px lightgray;
 }

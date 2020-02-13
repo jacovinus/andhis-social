@@ -14,6 +14,7 @@ import { TextPreviewPipe } from './publication/publication-display/text-preview.
 import { RouterModule } from '@angular/router';
 import { PublicationDisplayComponent } from './publication/publication-display/publication-display.component';
 import { PublicationsListComponent } from './publications-list/publications-list.component';
+
 @NgModule({
   declarations: [
     PublicationComponent,
