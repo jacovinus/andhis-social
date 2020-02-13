@@ -3,6 +3,9 @@
     display:flex;
     justify-content: space-around;
     flex-wrap:wrap;
+    height:100vh;
+    overflow-y: scroll;
+
 }
 .publication-list-body{
     display:flex;
