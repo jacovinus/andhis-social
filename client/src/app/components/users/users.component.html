@@ -2,8 +2,13 @@
   
 
   
-       
-  
+           <nav aria-label="Page navigation example">
+            <ul class="pagination">
+              <li *ngIf="page >1" class="page-item"><a class="page-link" [routerLink]="['/users',prev_page]">Previous</a></li>
+              <li *ngIf="pages != page || !page" class="page-item"><a class="page-link" [routerLink]="['/users',next_page]">Next</a></li>
+            </ul>
+          </nav>
+  <div class="users-container">
           <div class="card border-secondary col-lg-12 m-2" *ngFor="let user of users">
                <div class="card-body">
                 <div class="row">
@@ -34,12 +39,8 @@
                
             </div>
         </div>
-        <nav aria-label="Page navigation example">
-            <ul class="pagination">
-              <li *ngIf="page >1" class="page-item"><a class="page-link" [routerLink]="['/users',prev_page]">Previous</a></li>
-              <li *ngIf="pages != page || !page" class="page-item"><a class="page-link" [routerLink]="['/users',next_page]">Next</a></li>
-            </ul>
-          </nav>
+      </div>
+    
 
 
  
