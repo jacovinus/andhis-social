@@ -3,15 +3,15 @@
 
             <div class="row">
                 <div class="col-lg-2 mt-2">
-                    <app-sidebar></app-sidebar>
+                    <app-sidebar *ngIf="identity"></app-sidebar>
                 </div>
-                <p *ngIf="!identity">Please login if you have an account or register.</p>
+              
              <div class="col-lg-7">
                  <router-outlet></router-outlet>
               <!-- <app-timeline *ngIf="identity"></app-timeline> -->  
              </div>
              <div class="col-lg-3 mt-2">
-                <app-hostlist-sidebar></app-hostlist-sidebar>
+                <app-hostlist-sidebar *ngIf="identity"></app-hostlist-sidebar>
              </div>
             </div>
         </div>

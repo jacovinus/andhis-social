@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
       private _router:Router,
       private _userService:UserService
     ) {
-        this.title = 'Inicia Sesion';
+        this.title = 'Login';
         this.user = new User('','','','','','','','','','','','');
       }
   

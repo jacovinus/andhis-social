@@ -15,15 +15,15 @@
           </button>
     </div>
     <form #formAdd="ngForm" (ngSubmit)="onSubmit(formAdd)" class="form form-group" action="">
-        <p>
+     
             <label for="para">To: </label>
             <!-- Listado de seguidores -->
-            <select name="receiver" *ngIf="follows" #receiver="ngModel" [(ngModel)]="message.receiver" class="form-control" required id="selector">
+            <select name="receiver" #receiver="ngModel" [(ngModel)]="message.receiver" class="form-control" required id="selector">
                 <option *ngFor="let follow of follows" value="{{follow.user._id}}">
                     {{follow.user.name + ' ' + follow.user.surname + ' (' + follow.user.nick + ')' }}
                 </option>
             </select>
-        </p>
+       
         <p>
             <label for="message">Message:</label>
             <textarea style="white-space:pre" name="text" #text="ngModel" [(ngModel)]="message.text" class="form-control" required id="text" cols="30" rows="10"></textarea>

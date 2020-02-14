@@ -20,7 +20,7 @@ public status:string;
     private _userService:UserService
   ) { 
     // initiates the new user with a mock profile image
-    this.title = 'Ingresa tus datos y Registrate';
+    this.title = 'Register to Andhis';
     this.user = new User('','','','','','','','','','','','');
   }
 

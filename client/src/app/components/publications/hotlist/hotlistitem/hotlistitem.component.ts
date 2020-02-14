@@ -36,6 +36,7 @@ export class HotlistitemComponent implements OnInit {
   
           this.hotlistitems = response.hotlistitems;
           this.htcount = this.hotlistitems.length;
+          console.log(this.htcount);
         }
       },
       error => {

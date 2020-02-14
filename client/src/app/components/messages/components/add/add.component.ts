@@ -38,14 +38,15 @@ export class AddComponent implements OnInit {
     this.message = new Message("", this.identity._id, "", "", "", "");
   }
   ngOnInit() {
-    console.log("add.component cargado...");
     this.getMyFollows();
   }
   getMyFollows() {
     this._followService.getMyFollows(this.token).subscribe(
       response => {
-        if(response.follows < 0){
+       
+        if(response.follows.length > 0){
           this.follows = response.follows;
+         
         }
         
          else{

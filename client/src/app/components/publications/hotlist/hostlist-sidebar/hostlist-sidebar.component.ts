@@ -18,7 +18,7 @@ export class HostlistSidebarComponent implements OnInit {
   public hotlists: Hotlist[];
   public publications: Publication[];
   public url:string;
-@ViewChild('htcount',{static:false})htcount:number;
+@ViewChild('htcount',{static:false})htcount;
   constructor(
     private _userService: UserService,
     private _hotlistService: HotlistService
@@ -26,6 +26,7 @@ export class HostlistSidebarComponent implements OnInit {
     this.identity = this._userService.getIdentity();
     this.token = this._userService.getToken();
     this.url = GLOBAL.url;
+   
 
   }
 
@@ -34,7 +35,7 @@ export class HostlistSidebarComponent implements OnInit {
       response => {
         this.hotlists = response.hotlists;
         this.hotlistCount = this.hotlists.length;
-        console.log(this.htcount);
+        
         this.status = "success";
       },
       error => {

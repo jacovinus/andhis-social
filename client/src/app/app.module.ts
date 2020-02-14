@@ -14,11 +14,12 @@ import { SharedModule } from './components/shared/shared.module';
 import { UsersModule } from './components/users/users.module';
 import { UsersRoutingModule } from './components/users/users.routing.module';
 import { AngularFontAwesomeModule } from "angular-font-awesome";
+import { UserService } from './services/user.service';
+import { UserGuard } from './services/user-guard.service';
 
 @NgModule({
   declarations: [
-    AppComponent,
-
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +37,7 @@ import { AngularFontAwesomeModule } from "angular-font-awesome";
     UsersModule,
     UsersRoutingModule
   ],
-  providers: [],
+  providers: [ UserService, UserGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

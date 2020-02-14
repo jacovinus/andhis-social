@@ -1,0 +1,12 @@
+.login-container{
+    margin:0 auto;
+    margin-top:10px;
+    margin-bottom:10px;
+    background:white;
+    padding:20px;
+    box-shadow:2px 2px 6px lightgray;
+    display:flex;
+    height:75vh;
+    border-radius:5px;
+
+}
