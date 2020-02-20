@@ -7,6 +7,7 @@ import { UserService } from '../../../services/user.service';
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
+  styleUrls: ['./sidebar.component.css'],
   providers: [UserService]
   
 })

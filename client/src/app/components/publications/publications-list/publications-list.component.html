@@ -5,8 +5,7 @@
         <!-- barra de datos de autor de la publicacion-->
         <div class="publication-list-header">
           <div class="user-image">
-            <img *ngIf="identity.image" src="{{ url + 'get-image-user/'+ publication.user.image}}"
-              class="img-thumbnail rounded-circle mb-3" width="25px">
+            <img *ngIf="identity.image" src="{{ url + 'get-image-user/'+ publication.user.image}}" width="25px">
             <a [routerLink]="['/profile/'+publication.user._id]" class="ml-2">
               <small>{{publication.user.nick}}</small>
             </a>

@@ -1,0 +1,21 @@
+.sidebar {
+    background:white;
+    border-radius:5px;
+    margin-top:10px;
+    padding:10px;
+    box-shadow:3px 3px 8px lightgray;
+}
+.sidebar-user {
+    height:70px;
+    display:flex;
+    flex-wrap:wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    align-content: space-between;
+   
+}
+.sidebar-description {
+    color:rgb(150, 148, 148);
+   max-width:50%;
+    
+}

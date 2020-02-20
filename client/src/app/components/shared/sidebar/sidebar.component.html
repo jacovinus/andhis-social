@@ -1,12 +1,17 @@
-<div *ngIf="identity" class="d-md-none d-sm-none d-xs-none d-lg-block">
-<div class="card border-right">
+<div *ngIf="identity">
+<div class="sidebar">
 
-  <div class="card-body">
-    <img *ngIf="identity" src="{{ url + 'get-image-user/' + identity.image }}" class="img-thumbnail rounded-circle mt-2 ml-2" alt="" style="width: 50px;"/>
-    <a [routerLink]="['/profile/'+identity._id]" >
-      {{identity.nick}}
-    </a>
-    <p *ngIf="identity" class="card-text">{{identity.description}}</p>
+  <div class="sidebar-user-stats">
+    <div class="sidebar-user">
+      <img *ngIf="identity" src="{{ url + 'get-image-user/' + identity.image }}" class="mt-2 ml-2" alt="" style="width: 30%;"/>
+<div class="sidebar-description">
+  <a [routerLink]="['/profile/'+identity._id]" >
+    {{identity.nick}}
+  </a>
+  <small *ngIf="identity">{{identity.description}}</small>
+</div>
+  
+    </div>
     <ul class="list-group list-group-flush">
       <li *ngIf="followed" class="list-group-item">
         <a [routerLink]="['/followed',identity._id,1]">
