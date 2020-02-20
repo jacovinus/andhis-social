@@ -1,3 +1,5 @@
+
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap');
 .publications-container{
     max-height:90vh;
     overflow: auto;
@@ -6,10 +8,23 @@
 .timeline-img {
 height:10em;
 overflow:hidden;
-transition: opacity 1s;
-opacity:.9;
+transition: all 1s;
+opacity:.5;
 }
 
-.timeline-img img:hover{
+.timeline-img :hover{
 opacity: 1;
+}
+
+.timeline-publication{
+    background:white;
+    padding:10px;
+    box-shadow:3px 3px 8px lightgray;
+    border-radius:5px;
+}
+
+.timeline-publication-heading {
+    font-family: 'Roboto Slab', serif;
+    font-size:1.6em;
+    color:rgb(59, 33, 131);
 }

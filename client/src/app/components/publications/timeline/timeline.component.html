@@ -16,13 +16,13 @@
     </div>
     <div class="publications-container">
     <!-- user publications component-->
-    <div class="card border-0 mb-3" *ngFor="let publication of publications">
+    <div class="timeline-publication mb-3" *ngFor="let publication of publications">
        <!-- barra de datos de autor de la publicacion-->
       <div class="card-body">
         
           <div class="d-inline align-middle">
             <img *ngIf="identity.image" src="{{ url + 'get-image-user/'+ publication.user.image}}"
-              class="img-thumbnail rounded-circle mb-3 mt-2" width="40px">
+              class="mt-2" width="40px">
             <a [routerLink]="['/profile/'+publication.user._id]" class="ml-2">
               <small>{{publication.user.nick}}</small>
             </a>
@@ -48,7 +48,7 @@
           <img src="{{ url + 'publication/image/' + publication.file}}" alt="" class="img-fluid">
         </div>
         <a [routerLink]="['/publication/'+publication._id]">
-          <p class="h4 mt-4">{{publication.title}}</p>
+          <h1 class="timeline-publication-heading mt-4">{{publication.title}}</h1>
         </a>
         <p class="mt-3" style="white-space: pre-line">{{(publication.text | textPreview: 400 : '...')}}</p>
         <a *ngIf="publication.text.length > 400" [routerLink]="['/publication/'+publication._id]">
