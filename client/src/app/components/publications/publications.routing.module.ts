@@ -12,7 +12,7 @@ const publicationsRoutes : Routes = [
 ];
 
 @NgModule({
-    imports: [RouterModule.forRoot(publicationsRoutes)],
+    imports: [RouterModule.forRoot(publicationsRoutes, { relativeLinkResolution: 'legacy' })],
     exports: [RouterModule]
   })
   export class PublicationsRoutingModule {}

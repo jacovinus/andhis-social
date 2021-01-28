@@ -18,7 +18,7 @@ export class HostlistSidebarComponent implements OnInit {
   public hotlists: Hotlist[];
   public publications: Publication[];
   public url:string;
-@ViewChild('htcount',{static:false})htcount;
+@ViewChild('htcount')htcount;
   constructor(
     private _userService: UserService,
     private _hotlistService: HotlistService

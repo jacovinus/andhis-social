@@ -8,7 +8,7 @@ const routes: Routes = [
   { path: "home", component: TimelineComponent,canActivate:[UserGuard]}
 ];
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' })],
   exports: [RouterModule],
   providers:[UserGuard]
 })

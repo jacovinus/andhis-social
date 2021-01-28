@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { HostlistSidebarComponent } from './hostlist-sidebar.component';
 
@@ -6,7 +6,7 @@ describe('HostlistSidebarComponent', () => {
   let component: HostlistSidebarComponent;
   let fixture: ComponentFixture<HostlistSidebarComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ HostlistSidebarComponent ]
     })
